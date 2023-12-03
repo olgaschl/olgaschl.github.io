@@ -1,0 +1,1514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="url" content="EscapeEarth" />
+	<meta name="title" content="Escape Earth" />
+	<meta name="author" content="Olga Schlüter">
+	<meta name="description" content="proyecto secundaria astronomia Escape Earth " />
+ 	<meta name="keywords" content="xtec, xtec.cat, oschlute, escapeearth, EscapeEarth, Escape Earth, astronomia, secundaria, educacio, educacion, proyecto, projecte, astronomy, education" />
+	
+	<!-- for ios 7 style, multi-resolution icon of 152x152 -->
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-barstyle" content="black-translucent"/>
+	<link rel="apple-touch-icon" href="images/icon.png"/>
+	<!-- for Chrome on Android, multi-resolution icon of 196x196 -->
+	<meta name="mobile-web-app-capable" content="yes"/>
+	<link rel="shortcut icon" sizes="196x196" href="images/icon.png"/>
+	<!-- Favicon -->
+     <link rel="icon" type="image/png" sizes="64x64" href="images/icon64.png"/>
+	
+	<title>Escape Earth</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="css/zonaHabitabilidad.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/matchgame.css" type="text/css"/>
+	<link rel="stylesheet" href="css/carrousel.css" type="text/css"/>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>	
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>	
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>		
+	<script type="text/javascript" src="js/checkFlash.js"></script>	
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/coordenadas2.js"></script>
+	<script type="text/javascript" src="js/Chart.bundle.js"></script>
+	<script type="text/javascript" src="js/utils.js"></script>
+	<script type="text/javascript" src="js/semiejeMayor.js"></script>
+	<script type="text/javascript" src="js/transitoRadioPlaneta.js"></script>
+	<script type="text/javascript" src="js/curvaDeLuz.js"></script>
+	<script type="text/javascript" src="js/NumeroCivilizaciones.js"></script>
+	<script type="text/javascript" src="js/densidadPlaneta.js"></script>
+	<script type="text/javascript" src="js/temperaturaPlaneta.js"></script>
+	<script type="text/javascript" src="js/zonaHabitabilidad.js"></script>
+	<script type="text/javascript" src="js/html5games.matchgame.js"></script>
+	<script type="text/javascript" src="js/recomendaciones.js"></script>
+	<!--<script type="text/javascript" src="js/background.js"></script>-->
+	
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+	
+	<!-- Per què funcioni el resize -->
+	<script type="text/javascript" src="js/touchPunch.js"></script>
+	
+
+	<style type="text/css">
+	<!-- https://www.creativebloq.com/html5/12-html5-tricks-mobile-81412803 -->
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+		.chart-container {
+			width: 500px;
+			margin-left: 40px;
+			margin-right: 40px;
+			margin-bottom: 40px;
+		}
+		.container {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		</style>
+</head>
+
+<body>
+
+<div id="logo" class="col-12 col-s-12">
+		<center><img src="images/logo7.jpg" alt="logo" /></center>
+</div>
+
+
+<div id="pagina">
+  <div id="menu" class="col-2 col-s-2">
+    <div class="menuTitle"> Menú </div>            		
+		    <div class="menuItem clicktouch" id="menuPresentacio">Presentación</div>         
+		    <div class="menuItem clicktouch" id="menuCurriculo">Currículo y gamificación</div>         
+		    <div class="menuItem clicktouch" id="menuFichas">Fichas Didácticas</div> 
+            <div id="Fichas" class="hidden">                    
+					<div class="subMenuItem clicktouch" id="menuIntroduccio">1. Introducción</div> 
+            		<div class="subMenuItem clicktouch" id="menuSistemaSolar">2. Sistema Solar</div>
+            		<div class="subMenuItem clicktouch" id="menuEstrellas">3. Estrellas</div>
+					<div class="subMenuItem clicktouch" id="menuExoplanetas">4. Exoplanetas</div>
+					<div class="subMenuItem clicktouch" id="menuUniverso">5. Universo</div>					
+			</div>
+			<div class="menuItem clicktouch" id="menuCuestionario">Cuestionarios</div> 
+			<div class="menuItem clicktouch" id="menuContacto">Contacto</div> 
+			<div class="menuItem clicktouch" id="menuRecomendaciones">Recomendaciones</div> 
+			<div class="menuItem clicktouch" id="menuProyectos">Proyectos</div> 
+			<iframe width="110%" height="154" src="https://w2.countingdownto.com/2948954" frameborder="0"></iframe>
+    </div>
+
+
+  </div>
+  
+ <div id="content" class="col-10 col-s-10 col-">
+			<div id="Presentacio" style="text-align:justify; margin-right:10%;">
+                <h2> PRESENTACIÓN DEL PROYECTO</h2>						
+                <p> El objetivo del proyecto Escape Earth es ofrecer material didáctico actualizado sobre astronomía para el profesorado de secundaria en forma de proyecto gamificado. Se siguen las metodologías de trabajo basado en proyectos, retos y trabajo colaborativo, además de la gamificación y la controversia. Asimismo, se fomenta el uso de las TIC y el uso de datos reales que el alumnado puede extraer de bases de datos astronómicas online. </p>
+
+				<p>El nombre del proyecto, Escape Earth, pretende emular los juegos de tipo “Escape Room” donde los participantes deben escapar de una habitación cerrada con la ayuda de ciertas pistas. El reto para los alumnos es descubrir cuál es el mejor exoplaneta donde la humanidad debe huir. A lo largo de los talleres, irán evaluando los parámetros proporcionados y finalmente deberán justificar su elección del exoplaneta, describiendo su habitabilidad a partir de sus características.</p>
+
+				<p>En total se han desarrollado 13 talleres descargables de aproximadamente de unas dos horas cada uno, donde se describen las competencias clave, los contenidos curriculares y se detallan las actividades. El proyecto propuesto permite, por un lado, trabajar independientemente cada tema y escoger las actividades que se adapten mejor a cada grupo-clase, o bien, en la opción gamificada seguir todos los talleres.</p>
+
+				<p>La pregunta reto que impulsa todo el proyecto proviene de la frase del famoso científico Stephen Hawking <a class="link" href="https://space.nss.org/stephen-hawking-why-we-should-go-into-space-video/" target="blank" style="font-weight:bold;"> “No tenemos futuro si no colonizamos el espacio”.</a></p>
+				
+				<!--<iframe width=560 height=349 src=https://player.cnbc.com/p/gZWlPC/cnbc_global?playertype=synd&byGuid=3000616173 frameborder=0 scrolling=no allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen ></iframe>-->
+				<div style="float:left; width=70%; display:flex; padding:7px; margin-right:4%;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%;">													
+								<img src="images/step.JPG" width="72%" alt="Pisada de Neil Armstrong en la Luna" title="Pisada de Neil Armstrong en la Luna" />
+								<span><span style="text-align:left;">Pisada de Neil Armstrong en la Luna (1.969)</span></span>
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;">		
+								<img src="images/trails.JPG" width="115%" alt="Trazas del Curiosity en Marte" title="Trazas del Curiosity en Marte" />
+								<span><span>Trazas del Curiosity en Marte (2.014)</span></span>
+							</div>
+							<br/>
+				</div>	
+				<div style="text-align:justify; margin-right:3%;">
+				<br/>
+				<p><br/>En los siguientes enlaces se encuentran disponibles el manual de usuario y la memoria del proyecto, que se ha realizado en el marco del máster de <a class="link" href="https://www.universidadviu.es/master-astronomia-astrofisica/" target="blank"> Astronomía y Astrofísica de la Universidad Internacional de Valencia</a>.<br/></p>
+
+				<div style="margin-left:1%; float:left; display:flex; padding:10px;">																
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">													
+								<a href="http://xtec.cat/~oschlute/EscapeEarth/docs/EscapeEarthMemoria.pdf" target="blank" class="buttonDescargar">DESCARGAR MEMORIA</a>							
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0; margin-left:5%;">		
+								<a href="http://xtec.cat/~oschlute/EscapeEarth/docs/EscapeEarthManualUsuario.pdf" target="blank" class="buttonDescargar">MANUAL DE USUARIO</a>
+							</div>
+							<br/>
+				</div>
+				<br/><br/><br/><br/><br/><br/>
+				<div style="float:right;">
+					
+					<a rel="license" style="float:right;" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br/>
+					<span style="font-size:75%; text-indent:30%;">Esta obra está sujeta a una licencia de</span><br/> 
+					<a rel="license" style="font-size:75%; font-style:italic;" href="http://creativecommons.org/licenses/by-nc/4.0/" target="blank">Reconocimiento-NoComercial 4.0 Internacional de Creative Commons</a>
+				</div>
+				</div>
+            </div>  
+			
+			<div id="Curriculo" style="text-align:justify; margin-right:10%;" class="hidden">
+                <h2>Currículo y gamificación</h2>
+                <h3>Contenido y Competencias básicas</h3>                
+                <p>El proyecto reúne los contenidos y competencias básicas de:</p>
+					<ul>
+						<li>4º ESO Cultura científica</li>
+						<li>1º ESO Biología y Geología: Bloque de Modelo del Universo</li>
+						<li>2º ESO Física y Química: Bloque de controversias científicas </li>
+						<li>3º ESO Biología y Geología:  Bloque de controversias científicas </li>
+						<li>4º ESO Física y Química: Modelo de energía, interacción física, atómicomolecular </li>	
+
+					</ul>
+				<p>Se recomienda aplicar el proyecto en 4º de la ESO, en el marco de la asignatura optativa de Cultura Científica. Sin embargo, también se puede aplicar en 2º ó 3º en función de si se desea profundizar más en el contenido de fuerzas y energía (2º Física y Química) o en el bloque de ecosistemas y actividades humanas (3º Biología y Geología).</p>
+				
+				Las competencias básicas trabajadas son:<br/><br/>
+				
+				<div class="tg-wrap"><table class="tg">
+				  <tr>
+					<th class="tg-0lax">Dimensión</th>					
+					<th class="tg-0lax">Competencia</th>					
+				  </tr>
+				  <tr>
+					<td class="tg-0lax" rowspan="4">Indagación de fenómenos naturales y de la vida cotidiana</td>									  				  
+					<td class="tg-0lax">Competencia 1. Identificar y caracterizar los sistemas físicos y químicos desde la perspectiva los modelos para comunicar y predecir el comportamiento de los fenómenos naturales</td>					
+				  </tr>
+				  <tr>
+					<td class="tg-0lax">Competencia 2. Identificar y caracterizar los sistemas biológicos y geológicos desde la perspectiva de los modelos para comunicar y predecir el comportamiento de los fenómenos naturales</td>
+				  </tr>
+				  <tr>
+					<td class="tg-0lax">Competencia 3. Interpretar la historia del Universo de la Tierra y de la vida utilizando los registros del pasado</td>				
+				  </tr>
+				  <tr>
+					<td class="tg-0lax">Competencia 4. Identificar y resolver problemas científicos susceptibles de ser investigados en el ámbito escolar que impliquen el diseño, la realización y la comunicación de investigaciones experimentales</td>
+				  </tr>
+				  <tr>
+					<td class="tg-0lax" rowspan="2">Objetos y sistemas tecnológicos de la vida cotidiana</td>					
+					<td class="tg-0lax">Competencia 6. Reconocer y aplicar los procesos implicados en la elaboración y validación del conocimiento científico.</td>
+				  </tr>
+				  <tr>
+					<td class="tg-0lax">Competencia 7. Utilizar objetos tecnológicos de la vida cotidiana con el conocimiento básico de su funcionamiento, mantenimiento y acciones a hacer para minimizar los riesgos en la manipulación y en el impacto medioambiental</td>
+				  </tr>
+				  <tr>
+					<td class="tg-0lax" rowspan="2">Medio ambiente</td>					
+					<td class="tg-0lax">Competencia 10. Tomar decisiones con criterios científicos que permitan prever y evitar o minimizar la exposición a los riesgos naturales.</td>					
+				  </tr>				  
+				  <tr>
+					<td class="tg-0lax">Competencia 11. Adoptar medidas con criterios científicos que eviten o minimicen los impactos medioambientales derivados de la intervención humana.</td>					
+				  </tr>
+				</table></div>
+				<br/>
+				El resumen de cada taller se puede encontrar en el siguiente <a class="link" href="https://www.flippity.net/tl.php?k=1huO5TxaVaDcKBsI5IYO5BUUOvuJn7dNndKcu3gfha5Y#e2&amp;s=1" target="blank" style="font-weight:bold;">TimeLine</a>, y con más detalle en el <a class="link" href="http://xtec.cat/~oschlute/EscapeEarth/docs/EscapeEarthManualUsuario.pdf" target="blank" style="font-weight:bold;">Manual de Usuario</a>.
+				
+                <h3>Gamificación</h3>
+				<p>Para introducir el proyecto se ha creado el siguiente vídeo</p>
+				<div style="width:100%;center;">
+					<iframe class='youtube-player' type='text/html' width='863' height='486' src='https://www.youtube.com/embed/GAyfRc3WiMM?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe>
+				</div>
+				<br/>
+				y la <a class="link" href="https://view.genial.ly/5e90b4d1124be30da522e81a/game-breakout-presentacion-escape-earth" target="blank" style="font-weight:bold;">presentación interactiva y gamificada de Genial.ly</a></p>
+                <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe frameborder="0" width="900px" height="506px" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/5e90b4d1124be30da522e81a" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
+				
+				<p>Los alumnos se organizarán en equipos de investigación base (4-5 personas), donde cada uno de ellos tendrá un rol o especialidad, que puede ser rotativo. En momentos determinados, se juntarán los especialistas de todos los grupos para trabajar en un taller en concreto y volver a sus equipos base para transferir lo aprendido. Los roles propuestos son:</p>
+					<ul>
+						<li>Supervisor</li>
+						<li>Moderador</li>						
+						<li>Portavoz</li>
+						<li>Secretario</li>
+						<li>Informático</li>
+					</ul>					
+					
+				<p>Se ha añadido el rol de informático debido a que durante el proyecto se utilizan diversos simuladores, acceso y búsqueda de datos bases de datos on-line, así como aplicaciones móviles. La primera tarea del informático será crear su propia tarjeta, similar a las demás, creadas con <a class="link" href="http://www.readwritethink.org/classroom-resources/student-interactives/trading-card-creator-30056.html" target="blank" style="font-weight:bold;">Trading Card</a></p>
+				<div style="center;">
+					<a target="_blank" href="images/cartasRoles.png">
+							<img class="small" src="images/cartasRoles.png" alt="cartas de Roles"  title="cartas de Roles" style="width:150px" />
+							<span><span>Cartas de roles</span></span>
+					</a>
+				</div>
+				<br/>
+				<p> Al conseguir los resultados de un reto, se entregarán a los alumnos insignias, con los datos que serán necesarios más adelante. Las insignias también son un método para mantener el ritmo, la tensión y el equilibrio entre los diferentes equipos. Si se ve que un equipo se avanza demasiado o, por el contrario, va muy lento, se conseguirá regular el grupo completo con las insignias.</p>			
+				
+				<div style="center;">
+					<a target="_blank" href="images/insignias.JPG">
+							<img class="small" src="images/insignia.jpg" alt="Insignias"  title="Insignias" style="width:150px" />
+							<span><span>Insignias</span></span>
+					</a>
+				</div>				
+				<br/>				
+				<p>La <a class="link" href="https://view.genial.ly/5e90b4d1124be30da522e81a/game-breakout-presentacion-escape-earth" target="blank" style="font-weight:bold;">presentación interactiva y gamificada de Genial.ly</a>, incluye las siguientes insignias que simbolizan los elementos imprescindibles para la vida. Estas insignias también se pueden imprimir en una máquina para irlas entregando como premios a medida que se avance por las diferentes fases del proyecto.</p>
+				<div style="center;">
+					<a target="_blank" href="images/badges2.png">
+							<img class="small" src="images/badges2.png" alt="Premios"  title="Premios" style="width:150px" />
+							<span><span>Premios</span></span>
+					</a>
+				</div>
+				<br/>
+				<p>El proyecto Escape Earth también fomenta la coevaluación y la auto-evaluación. Al trabajar en un entorno cooperativo, se evaluará el trabajo en equipo en sí, además de las competencias propias de las materias. </p>
+				
+				<div style="center;">
+					<a target="_blank" href="images/rubricaEvaluacion.JPG">
+							<img class="small" src="images/rubricaEvaluacion.JPG" alt="Rúbrica de evaluación de trabajo cooperativo"  title="Rúbrica de evaluación de trabajo cooperativo" style="width:150px" />
+							<span><span>Rúbrica de evaluación de trabajo cooperativo</span></span>
+					</a>
+				</div>
+				<br/>
+				<p>Con el fin de trabajar la dimensión epistémica de la ciencia, se propone establecer niveles de experteza para que los grupos puedan asesorar de manera cruzada las publicaciones de otros grupos, tal y como se actúa en la ciencia moderna. Cada vez que el grupo descubra algún parámetro del exoplaneta a descubrir, podrá publicar un artículo o un vídeo, por ejemplo en la plataforma <a class="link" href="https://info.flipgrid.com/" target="blank" style="font-weight:bold;">Flipgrid</a>. Esta publicación será revisada por otros grupos.</p>
+				
+				<div style="center;">
+					<a target="_blank" href="images/publicaciones.PNG">
+							<img class="small" src="images/publicaciones.PNG" alt="Rúbrica de evaluación de trabajo cooperativo"  title="Rúbrica de evaluación de trabajo cooperativo" style="width:150px" />
+							<span><span>Seguimiento de publicaciones</span></span>
+					</a>
+				</div>
+				<br/>
+				<p>La gestión de las publicaciones se puede realizar mediante la aplicación <a class="link" href="https://flippity.net/" target="blank" style="font-weight:bold;">Progress Indicator de Flippity</a> que transforma una hoja de cálculo del drive a una visualización más cómoda. El alumnado pasará así de un nivel novato a experto según el número de publicaciones aceptadas por "la comunidad científica". Si acaso, se podría diferenciar entre publicaciones escritas o vídeos y es recomendable un debate donde se reflexione si el número de publicaciones debe pesar más o menos que la trascendencia de la publicación en sí.</p>
+				<br/>
+				
+				<h3>Requisitos de instalación</h3>				
+					<table>
+						<tr>
+							<td colspan="2"><div style="text-align:justify; font-size:16px;">La página web usa simulaciones realizadas en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a>, que también se pueden descargar según explica el siguiente video:
+							<div style="width:100%;center;">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/Msnah_xkwAs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<!--	<iframe class='youtube-player' type='text/html' width='400' height='200' src='https://www.youtube.com/watch?v=Msnah_xkwAs' allowfullscreen='true' style='border:0;'></iframe>-->
+							</div>					
+							</div></td>							
+						</tr>
+						<tr>						
+							<td>
+								<div style="text-align:justify; font-size:16px;">Dado que Flash se ha desactivado de algunos navegadores, se recomienda instalar la extensión Flash Player for Chrome, que se puede encontrar para Chrome en su <a class="link" target="blank" style="font-weight:bold;" href="https://chrome.google.com/webstore/detail/flash-playlist/nddmmcpmdbkooddfjcohmlcfclhllgeh/related?hl=ca"> web store </a></div>
+							</td>	
+							<td><br/><br/><img src="images/flashC.PNG" alt="Flash Player for Chrome"/></td>						
+						</tr>
+						<tr>
+							<td><div style="text-align:justify; font-size:16px; margin-right:5%;">En el caso de estar navegando con FireFox, se puede descargar de <a class="link" href="https://addons.mozilla.org/en-US/firefox/addon/flash-player-emulator/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" target="blank">aquí</a>.<br/>															
+								</div>
+							</td>
+							<td><img src="images/flashFirefox2.PNG" width="60%" alt="Flash Player 2021"/>	
+							</td>
+						</tr>
+					</table>								
+            </div> 
+			
+			<div id="Contacto" class="hidden">
+                <h2>Contacto</h2>                
+                <p>Para cualquier sugerencia o duda, podéis contactar a través del siguiente formulario:</p>                
+                <div>
+					<iframe width="100%" height="759" allowTransparency="true" frameborder="0" scrolling="no" style="border:none" src="https://www.emailmeform.com/builder/embed/T66bb0KE4Ojdc"><a href="https://www.emailmeform.com/builder/embed/T66bb0KE4Ojdc">Rellene el formulario</a></iframe>						
+				</div>
+            </div> 
+			
+			<div id="Recomendaciones" class="hidden">
+                <h2>Recomendaciones</h2>                               
+                <div>
+					<div>
+						<img class="slide" src="images/recomendaciones/recom1.jpg" alt="Recomendaciones" id="opa" />
+						<img class="slide2" src="images/recomendaciones/recom2.jpg" alt="Recomendaciones" id="opa2" />
+					</div>
+				</div>
+				<div id="selector">
+					<p>
+						<img src="images/selector_green.png" alt="" />	
+						<img src="images/selector_orange.png" alt="" />	
+						<img src="images/selector_red.png" alt="" />		
+					</p>
+
+				</div>
+				 <p>Se recomiendan las siguientes lecturas, películas, documentales, canales de youtube, blogs...: </p>                
+				<div>				
+					<div style="font-style:italic; font-size:18; font-color:#606063; font-weight:bold;">Libros</div>
+					<ul>
+						<li><a class="link" href="http://www.ediciones-omega.es/cursos-basicos/1532-curso-basico-de-astronomia-978-84-282-1628-9.html" target="blank">Curso básico de astronomía</a>, de Ediciones Omega</li>
+						<li><a class="link" href="https://blume.net/catalogo/1556-50-descubrimientos-ideas-y-conceptos-9788417056063.html" target="blank">50 descubrimientos, ideas y conceptos en Astronomía</a>, de François Ressin</li>
+						<li><a class="link" href="https://www.xatakaciencia.com/libros-que-nos-inspiran/libros-que-nos-inspiran-el-universo-en-tu-mano-de-christophe-galfard" target="blank">El Universo en tu mano</a>, de Christopher Galfard</li>
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Breves_respuestas_a_las_grandes_preguntas" target="blank"> Breves respuestas a las grandes preguntas</a>, de Stephen Hawking</li>
+						<li><a class="link" href="https://www.planetadelibros.com/libro-la-puerta-de-los-tres-cerrojos/265101" target="blank"> La puerta de los tres cerrojos (1)</a>, de Sonia Fernández-Vidal</li>						
+						<li><a class="link" href="https://www.planetadelibros.com/libro-la-puerta-de-los-tres-cerrojos-2-la-senda-de-las-cuatro-fuerzas/265102" target="blank">La puerta de los tres cerrojos. (2) La senda de las cuatro fuerzas</a>, novelas juveniles, de Sonia Fernández-Vidal</li>						
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Contact_(pel%C3%ADcula)" target="blank"> Contact</a>, de Carl Sagan</li>						
+						<li><a class="link" href="http://www.ediciones-omega.es/astronomia-meteorologia/1573-guia-de-campo-de-las-estrellas-y-los-planetas-978-84-282-1206-9.html" target="blank"> Guía de campo de las estrellas y los planetas</a>, de Ediciones Omega</li>						
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Serie_de_la_Fundaci%C3%B3n" target="blank"> Trilogía de la fundación (y más)</a>, novelas de ciencia ficción, de Isaac Asimov</li>						
+						<li><a class="link" href="https://www.goodreads.com/book/show/31625636-we-have-no-idea" target="blank"> We have no idea</a>, guía del Universo desconocido, de Jorge Cham y Daniel Whiteson</li>	
+						<li><a class="link" href="https://www.cossetania.com/100-histries-de-laoaventura-espacial-2345" target="blank"> 100 historias de la aventura espacial</a>, historia y anécdotas, de Joan Anton Català</li>	
+						<li><a class="link" href="https://www.anecdonet.com/libros-recomendados/los-dialogos-conversaciones-sobre-la-naturaleza-del-universo-johnson-clifford-v/" target="blank"> Los diálogos. Conversaciones sobre la naturaleza del Universo</a>,cómic de divulgación de Clifford Jonhson</li>						
+						<li><a class="link" href="https://www.goodreads.com/book/show/51222253-cu-ntix" target="blank"> Cuántix: La fisica cuántica y la relatividad en cómic</a>,cómic de divulgación de Laurent Schafer</li>	
+						<li><a class="link" href="https://www.goodreads.com/book/show/33284677-las-mujeres-de-la-luna	" target="blank"> Las mujeres de la Luna</a>, historia sobre científicas</li>						
+					</ul>
+					<div style="font-style:italic; font-size:18; font-color:#606063; font-weight:bold;">Películas y Documentales</div>
+					<ul>
+						<li><a class="link" href="https://www.filmaffinity.com/es/film420650.html" target="blank"> La llegada</a>, de Denis Villeneuve</li>
+						<li><a class="link" href="https://www.documaniatv.com/documentales/cosmos/" target="blank"> Cosmos</a>, con Carl Sagan y Neil deGrasse</li>
+						<li><a class="link" href="https://www.filmaffinity.com/es/film941838.html" target="blank"> IO, the last on Earth</a>, de Jonathan Helpert</li>						
+						<li><a class="link" href="https://www.filmaffinity.com/es/film704416.html" target="blank"> Interestellar</a>, de Christopher Nolan</li>						
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Gravity_(pel%C3%ADcula)" target="blank"> Gravity</a>, de Alfonso Cuarón</li>						
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Contact_(novela)" target="blank"> Contact</a>, de la novela de Carl Sagan</li>						
+						<li><a class="link" href="https://es.wikipedia.org/wiki/2001:_A_Space_Odyssey_(pel%C3%ADcula)" target="blank"> Una odisea del espacio</a>, de Stanley Kubrick</li>						
+						<li><a class="link" href="https://es.wikipedia.org/wiki/The_Martian" target="blank"> Marte</a>, de Ridley Scott</li>						
+						<li><a class="link" href="https://www.bbc.co.uk/programmes/b00zdhtg" target="blank"> Wonders of the Universe</a>, (en inglés) con Brian Cox</li>												
+						<li><a class="link" href="https://www.nationalgeographic.es/video/tv/nuestro-planeta-one-strange-rock-una-nueva-serie-presentada-por-will-smith" target="blank"> Nuestro planeta (One strange rock)</a> serie con Will Smith</li>	
+						<li><a class="link" href="https://www.netflix.com/es/title/80117263?source=android" target="blank">La generación de Marte</a> documental con Neil deGrasse</li>
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Marte_(serie_de_televisi%C3%B3n)" target="blank">Marte</a> docudrama de ciencia ficción</li>					
+						<li><a class="link" href="https://www.netflix.com/es/title/80221410" target="blank">Otras galaxias (Alien worlds)</a> documental de ciencia y naturaleza ficción </li>	
+					</ul>
+					<img src="images/youtube.jpg" alt="logo youtube" />
+					<ul>
+						<li><a class="link" href="https://www.youtube.com/user/QuantumFracture" target="blank"> Quantum Fracture</a></li>
+						<li><a class="link" href="https://www.youtube.com/channel/UCQX_MZRCaluNKxkywkLEgfA" target="blank"> Date un vlog</a>, de Javier Santaolalla</li>						
+						<li><a class="link" href="https://www.youtube.com/channel/UCqoAEDirJPjEUFcF2FklnBA" target="blank"> Startalk</a>, (en inglés) de Neil deGrasse</li>						
+						<li><a class="link" href="https://www.youtube.com/channel/UC7_gcs09iThXybpVgjHZ_7g" target="blank"> PBS Space time</a>, (en inglés)</li>						
+						<li><a class="link" href="https://www.youtube.com/channel/UCsXVk37bltHxD1rDPwtNM8Q" target="blank"> Kurzgesagt (in a nutshell)</a>, (en inglés)</li>	
+						<li><a class="link" href="https://www.youtube.com/user/phdcomics" target="blank"> PHD Comics</a>, (en inglés)</li>						
+						<li><a class="link" href="https://www.youtube.com/channel/UCWQmeM73VxKNPxwga48J1Rg" target="blank"> José Manuel Nieves</a></li>	
+					</ul>
+					<img src="images/blog.jpg" width="5%" alt="logo blog" />
+					<ul>
+						<li><a class="link" href="http://oceanoestelar.blogspot.com/" target="blank"> Océano estelar</a></li>
+						<li><a class="link" href="https://milesdemillones.com/" target="blank"> Miles de millones</a></li>						
+						<li><a class="link" href="https://cienciadesofa.com/" target="blank"> Ciencia de sofá</a></li>						
+						<li><a class="link" href="https://astroaficion.com" target="blank"> Astroafición</a></li>	
+						<li><a class="link" href="https://abcblogs.abc.es/nieves/autor/jmnieves/" target="blank"> Ciencia y tecnología</a></li>							
+						<li><a class="link" href="http://www.joanantoncatala.com/ca/2020/03/15/ciencia-en-confinament/" target="blank"> Ciència en confinament de Joan Anton Català</a></li>	
+					</ul>
+					<img src="images/logo_twitter.jpg" width="2%" alt="logo twitter" />
+					<ul>
+						<li><a class="link" href="https://twitter.com/NASA" target="blank"> NASA</a></li>
+						<li><a class="link" href="https://twitter.com/esa" target="blank"> ESA</a></li>
+						<li><a class="link" href="https://twitter.com/NASAPersevere/" target="blank"> NASA Perseverance</a></li>						
+						<li><a class="link" href="https://twitter.com/AsteroidDay" target="blank"> Asteroid Day</a></li>						
+						<li><a class="link" href="https://twitter.com/michiokaku" target="blank"> Michio Kaku</a></li>	
+						<li><a class="link" href="https://twitter.com/MemesDeAstro" target="blank"> Memes de astronomía</a></li>		
+						<li><a class="link" href="https://twitter.com/estelsiplanetes" target="blank"> Estels i planetes</a></li>					
+					</ul>
+					<img src="images/logo_telegram.JPG" width="2%" alt="logo telegram" />
+					<ul>
+						<li><a class="link" href="https://t.me/noticiesastronomia" target="blank"> Canal de noticias</a></li>						
+					</ul>					
+					<br/>
+					<a class="link" href="https://ifttt.com/services/space" target="blank" title="Applets de la NASA"><img src="images/applets.jpg" width="4%" alt="logo applets" /> Applets de la NASA</a>
+					
+				</div>
+            </div> 
+			
+			<div id="Proyectos" class="hidden col-12" style="text-align:justify; margin-right:3%;">
+					
+					<div  style="float:left;" class="menuTitle"> PROYECTOS </div> 					
+					<br/><br/>	
+					<div style="text-align:justify; margin-right:10%;"><br/>
+						Se recomienda realizar observaciones reales mediante los programas, que los observatorios ofrecen de horas de telescopios, con el fin que los estudiantes realicen sus propias investigaciones. En el siguiente muro virtual, se exponen algunos proyectos interesantes:
+						<br/><br/>
+						<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+							<p style="padding:0;margin:0">
+								<iframe src="https://padlet.com/embed/106o3hq6ab7t" frameborder="0" allow="camera;microphone;geolocation" style="width:1400px;height:1100px;display:block;padding:0;margin:0"></iframe>
+							</p>
+							<div style="padding:8px;text-align:right;margin:0;">
+								<a href="https://padlet.com?ref=embed" style="padding:0;margin:0;border:none;display:block;line-height:1;height:16px" target="_blank">
+									<img src="https://resources.padletcdn.com/assets/made_with_padlet.png" width="100% style="padding:0;margin:0;background:none;border:none;display:inline;box-shadow:none" alt="Hecho con Padlet">
+								</a>
+							</div>
+						</div>
+					</div>				
+			</div>
+			
+			<div id="Cuestionario" class="hidden">
+                <h2>Cuestionarios</h2>                
+                <p>Durante la elaboración de la memoria, se difundieron sendos cuestionarios a profesores y alumnos de secundaria:</p>                
+                <div>
+					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdLFo006vUO8DFpbxspdHB1AZWalNbfDGZC3WviESD4vuzGJw/viewform?embedded=true" width="640" height="3680" frameborder="0" marginheight="0" marginwidth="0">S&#39;està carregant...</iframe>
+					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf6SMy6k1EDcbEsKLf-6E9P3fTGB5BbIPXOwwQOXqxeNn6OUQ/viewform?embedded=true" width="640" height="3337" frameborder="0" marginheight="0" marginwidth="0">S&#39;està carregant...</iframe>
+				</div>
+            </div>
+			
+			<div id="Introduccio" class="hidden">
+			<div class="col-10 col-s-10">
+					<div id="menuPorque" class="menuSuperior">¿Por qué?</div>
+					<div id="menuHabitabilidad" class="menuSuperior">Condiciones para la vida</div>
+					<div id="menuDrake" class="menuSuperior">Fórmula de Drake</div>				
+			</div>
+				<div id="Porque" class="hidden col-12" style="text-align:justify; margin-right:3%;">
+					<div style="float:right;"><a href="docs/Taller1.1.Introduccion.Porque.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> ¿POR QUÉ? </div> 					
+					<br/><br/>	
+					<div style="text-align:justify; margin-right:10%;"><br/>
+					En el siguiente muro virtual hay colgadas diversas noticias y enlaces sobre los problemas que acechan a la Tierra. Agrupad a parte los problemas y las posibles soluciones, añadiendo otros temas, si se cree necesario.					
+					<br/><br/>
+						<div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4">
+							<p style="padding:0;margin:0">
+								<iframe src="https://padlet.com/embed/cpy9jnblo3q3" style="width:1400px;height:1100px;display:block;padding:0;margin:0" frameborder="0"></iframe>
+							</p>
+						<div style="padding:8px;text-align:right;margin:0;">
+							<a href="https://padlet.com?ref=embed" style="padding:0;margin:0;border:none;display:block;line-height:1;height:16px" target="_blank">
+								<img src="https://resources.padletcdn.com/assets/made_with_padlet.png" width="100%" style="padding:0;margin:0;background:none;border:none;display:inline;box-shadow:none" alt="Hecho con Padlet" />
+							</a>
+						</div>
+					</div>
+					</div>
+				
+				</div>
+				<div id="Habitabilidad" class="hidden col-12" style="text-align:justify; margin-right:3%;">
+					<div style="float:right;"><a href="docs/Taller1.2.Introduccion.CondicionesParaLaVida.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div class="menuTitle"> CONDICIONES PARA LA VIDA </div> 
+					<br/>
+					<div style="float:left; width:75%;">													
+						<br/>Existen diversos criterios geofísicos, geoquímicos y astrofísicos que permiten a un planeta o satélite desarrollar y mantener entornos para la vida: <br/><br/>						
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">													
+							<a href="https://es.wikipedia.org/wiki/Zona_de_habitabilidad" target="blank" class="buttonCondiciones float:left;">ZONA DE HABITABILIDAD</a><br/>							
+								<br/>La búsqueda de vida fuera de la Tierra tiene algo en común: la búsqueda de agua. El hecho que en la Tierra exista agua, depende de la energía que viene del Sol y de la distancia que está la Tierra del Sol. La región de cualquier sistema planetario donde puede haber agua líquida se llama zona de habitabilidad, tema que se trata en más profundidad en el <a class="link" href="http://xtec.cat/~oschlute/EscapeEarth/docs/Taller4.4.Exoplanetas.ZonadeHabitabilidadVs.Habitabilidad.pdf" target="blank">Taller 4.4. Exoplanetas. Zona de Habitabilidad Vs. Habitabilidad</a>
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<video width="320" height="240" controls>
+									<source src="video/habitableZone.mp4" type="video/mp4">						  
+									Tu navegador no soporta la visualización de este video
+								</video>
+							</div>
+							<br/>
+						</div>
+						<br/>						
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">																				
+							<a href="https://es.wikipedia.org/wiki/Categor%C3%ADa:Tipos_de_estrellas" target="blank" class="buttonCondiciones float:left;">TIPO DE ESTRELLA</a><br/>							
+								<br/>Nuestro Sol es del tipo G y es bastante estable, comparado con otros tipos de estrellas que emiten fulguraciones de rayos gamma y rayos X letales para la vida. Este tema se trata con más profundidad en el taller 3. Estrellas
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/solarFlare.JPG" width="100%" alt="llamarada del Sol" />
+							</div>
+						</div>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">
+							<a href="https://es.wikipedia.org/wiki/Excentricidad_orbital" target="blank" class="buttonCondiciones float:left;">EXCENTRICIDAD DE LA ÓRBITA</a><br/>	
+								<br/>Si la Tierra tuviera una órbita más excéntrica, quizás en ciertos períodos del año, no estaríamos en la Zona de Habitabilidad, pudiendo estar demasiado cerca o lejos del Sol.
+
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/orbita.JPG" width="100%" alt="orbita" />
+							</div>
+						</div>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">													
+							<a href="https://es.wikipedia.org/wiki/Masa_de_la_Tierra" target="blank" class="buttonCondiciones float:left;">MASA DEL PLANETA</a><br/>								
+								<br/>Un planeta más pequeño que la Tierra no tendría suficiente gravedad para retener una atmósfera, que es vital para protegernos de los rayos cósmicos y además mantener el efecto invernadero. Suficiente masa es importante también para mantener activo el núcleo, que impulsa el movimiento de las placas tectónicas. En contraste, Marte no tiene fuerza para retener su atmósfera y geológicamente está “muerto”.
+
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/MedidasPlanetas.JPG" width="100%" alt="Medidas Planetas" />
+							</div>
+						</div>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">	
+							<a href="https://es.wikipedia.org/wiki/Movimiento_de_rotaci%C3%B3n" target="blank" class="buttonCondiciones float:left;">ROTACIÓN</a><br/>							
+								<br/>El planeta debe rotar (girar sobre sí mismo) para dar oportunidad al desarrollo de la vida y no girar respecto al Sol como la Luna hace con la Tierra, mostrando siempre la misma cara. La rotación (ciclo del día y la noche) debería ser relativamente rápida, para que la diferencia de temperatura no sea pronunciada. También debe rotar relativamente rápido para que el núcleo de hierro al girar produzca un campo magnético.
+
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/rotacion.gif" width="100%" alt="rotacion" />
+							</div>
+						</div>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">			
+							<a href="https://es.wikipedia.org/wiki/Campo_magn%C3%A9tico_terrestre" target="blank" class="buttonCondiciones float:left;">CAMPO MAGNÉTICO</a><br/>																					
+								<br/>El campo magnético protege a la Tierra de los rayos cósmicos, que destruirían la atmósfera y de la radiación ultravioleta, que puede destruir nuestra visión, quemarnos la piel, y además dañar nuestro ADN.
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/campoMagnetico.JPG" width="100%" alt="campo magnético" />
+							</div>
+						</div>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">	
+							<a href="https://es.wikipedia.org/wiki/Atm%C3%B3sfera" target="blank" class="buttonCondiciones float:left;">ATMÓSFERA</a><br/>																												
+								<br/>La atmósfera de la Tierra hace posible que la temperatura media sea de unos 15ºC. Gracias a los gases de la atmósfera, se produce el efecto invernadero de forma natural. Además, la atmósfera también nos protege de la luz ultravioleta, que puede destruir nuestra visión, quemarnos la piel, y además dañar nuestro ADN. Este tema se trata con más detalle en el <a class="link" href="http://xtec.cat/~oschlute/EscapeEarth/docs/Taller4.3.Exoplanetas.Temperatura.pdf" target="blank">Taller 4.3. Exoplanetas. Temperatura.pdf</a>
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/atmosfera.JPG" width="100%" alt="atmosfera" />
+							</div>
+						</div>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">		
+							<a href="https://es.wikipedia.org/wiki/Oblicuidad_de_la_ecl%C3%ADptica" target="blank" class="buttonCondiciones float:left;">INCLINACIÓN AXIAL</a><br/>	
+								<br/>La existencia de la Luna permite que la inclinación de la Tierra sea estable. Sin su existencia, la Tierra giraría como una peonza, de manera que el clima sería caótico. Además, las mareas provocadas por la Luna, contribuyen a la dinámica de los océanos.
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">										
+								<img src="images/inclinaciones.gif" width="100%" alt="inclinaciones" />
+							</div>
+						</div>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">																				
+							<a href="https://es.wikipedia.org/wiki/Anexo:Tipos_de_planeta" target="blank" class="buttonCondiciones float:left;">TIPO DE PLANETA</a><br/>	
+								<br/>Una estrella como el Sol contiene elementos metálicos que favorecen la formación de planetas rocosos como la Tierra, que pueden albergar agua y, por lo tanto, vida. Los planetas acuáticos u oceánicos pueden también albergar vida si están suficientemente cerca de su estrella o tienen atmósferas que producen un fuerte efecto invernadero. El planeta <a class="link" href="https://es.wikipedia.org/wiki/GJ_1214_b">GJ 1214b</a> es un candidato a planeta océano. 
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/planetasTerrestres.JPG" alt="planetas terrestres" />
+							</div>
+						</div>
+						<br/>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3; float:left; width=70%; display:flex; padding:10px;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%; text-align:justify; margin-right:5%;">																				
+							<a href="https://es.wikipedia.org/wiki/Sistema_planetario" target="blank" class="buttonCondiciones float:left;">SISTEMA PLANETARIO</a><br/>	
+								<br/>La estructura del sistema planetario también puede influir en la posibilidad de formación de planetas rocosos en la zona de habitabilidad. Por ejemplo, se calcula que el cinturón de asteroides no pudo llegar a formarse como planeta debido a la influencia gravitatoria de Júpiter. Si Júpiter estuviera en el lugar de Marte, seguramente la Tierra no se habría llegado a formar. Por otra parte, la localización de Júpiter en nuestro Sistema Solar, nos protege de amenazas externas, como meteoritos y cometas.
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;  flex-basis:400px;  ">		
+								<img src="images/estructuraSistema.JPG" width="100%" alt="Sistema" />
+							</div>
+						</div>
+						<div style="float:left; text-align:justify; margin-right:5%;">
+							<div style="float:left; margin-right:1%;">
+								<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+									codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+									WIDTH="700" HEIGHT="550" id="AlienSafari" ALIGN="">
+									<PARAM NAME=movie VALUE="alienSafari19.swf"> <PARAM NAME=quality VALUE=high> <PARAM NAME=bgcolor VALUE=#ffffff> 
+									<EMBED src="swf/alienSafari19.swf" quality=high bgcolor="#ffffff"  WIDTH="700" HEIGHT="550" NAME="AlienSafari" ALIGN="" TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"></EMBED>
+								</OBJECT>						
+								<!-- https://exoplanets.nasa.gov/interactable/3/index.html -->
+							</div>
+							<br/>
+							<div style="text-align:justify; margin-right:3%;"><br/><br/>
+							Esta aplicación de la NASA, <a class="link" href="https://exoplanets.nasa.gov/interactable/3/index.html" target="blank">Alien Safari</a>, que requiere el plugin de Flash para ejecutarse, permite explorar los organismos extremófilos de nuestro planeta. Mientras la Tierra da vueltas, irán apareciendo sus hábitats marcados en rojo. 
+							<br/><br/> La música se puede deshabilitar con el botón music on/off del extremo inferior derecho.
+					
+							</div>
+						</div>
+					</div>						
+				</div>
+				<div id="Drake" class="hidden col-12" style="text-align:justify; margin-right:3%;">			
+					<div style="float:right;"><a href="docs/Taller1.3.Introduccion.BusquedaDeVidaInteligente.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> FÓRMULA DE DRAKE</div>
+					<div style="float:left; text-align:justify; margin-right:10%;"><br/>
+					La fórmula de Drake es una ecuación para estimar la cantidad de civilizaciones en nuestra galaxia, la Vía Láctea, capaces de comunicarse con el exterior, emitiendo señales. 
+					Si N es menor que 1, entonces la vida en la Tierra es <a class="link" href="https://es.wikipedia.org/wiki/Hip%C3%B3tesis_de_la_Tierra_especial" target="blank">rara</a>, teoría que afirma que la vida surgió de una cadena de posibilidades y por lo tanto se trata de un fenómeno muy improbable.
+					Si N es mayor que 1, la vida debe ser relativamente común en el Universo. Es el llamado <a class="link" href="https://es.wikipedia.org/wiki/Principio_de_mediocridad" target="blank">principio de mediocridad o de Copérnico</a>, que afirma que la Tierra no tiene nada de especial.
+						<br/><br/><br/>
+						<table width="70%" align="left" border="0">                								
+							<tr>
+								<td width="15%">Número de civilizaciones avanzadas en la línea láctea = </td>
+								<td width="5%"><input type="number" id="c1" class="texte"  /></td>
+								<td width="4%"><input type="number" id="c2" min="0" class="texte"  /></td>
+								<td width="15%">&nbsp;&nbsp;</td>
+								<td width="4%"><input type="number" id="c3" min="0" class="texte"  /></td>
+								<td width="4%"><input type="number" id="c4" min="0" class="texte"  /></td>
+								<td width="4%"><input type="number" id="c5" min="0" class="texte"  /></td>
+								<td width="4%"><input type="number" id="c6" min="0" class="texte"  /></td>
+								<td width="4%"><input type="number" id="c7" min="0" class="texte"  /></td>
+								<td width="4%"><input type="number" id="c8" min="0" class="texte"  /></td>
+								<!--<td width="4%"><input type="button" id="sol2" class="texte" value="Calcular Civilizaciones" /></td>	-->
+								<td width="4%"><input class="ButtonSubmit" type="button" id="sol2" value="Calcular Civilizaciones" /></td>	
+<!-- https://forum.playcanvas.com/t/html-button-with-touch-event-any-help/2706/3 -->								
+							</tr>
+						</table>		
+					</div>
+					<br/><br/>
+				<div id="resultatCivilizaciones"></div>
+				<br/><br/>	<br/><br/>
+				<img src="images/drake.jpg" alt="Fórmula de Drake" />				
+				</div>			
+				
+            </div>
+			
+			 <div id="SistemaSolar" class="hidden">
+				<div class="col-10 col-s-10">
+					<div id="menuPlanetasyLunas" class="menuSuperior">Planetas y Lunas</div>
+					<div id="menuMeteoritos" class="menuSuperior">Meteoritos, Asteroides, Cometas</div>
+					<div id="menuEstaciones" class="menuSuperior">Estaciones del año</div>
+					<div id="menuOrbitas" class="menuSuperior">Órbitas</div>				
+				</div>			
+				<div id="PlanetasyLunas" class="hidden col-12" style="text-align:justify; margin-right:3%;">
+					<div style="float:right;"><a href="docs/Taller2.SistemaSolar.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>	
+					<br/><br/>					
+					<div  style="float:left;" class="menuTitle"> PLANETAS Y LUNAS </div> 					
+					<br/><br/>
+					<div style="float:left; border:1px solid black; background-color: black;">
+					<br/><p style="color:white; font-weight: bold;text-align: center;">&nbsp;&nbsp;&nbsp;Empareja los planetas y encuentra el único planeta que no es de nuestro Sistema Solar&nbsp;&nbsp;&nbsp;</p>
+						<section id="game">
+							<div id="cards">			
+								<div class="card">
+									<div class="face front"></div>
+									<div class="face back"></div>
+								</div> 						
+							</div> 
+						</section> 
+						<br/><br/>
+					</div>
+					
+					<div style="border:1px solid black; background-color: black;"> 
+					<center>
+						<br/>					
+						<span title="SistemaSolar - puzzle - 36 piezas" style="display:inline-block;margin:.9em;width:200px; height:530px; vertical-align:center;">
+						<p style="color:white; font-weight: bold; text-align: center;">¿Sabes cuál es cada planeta y en qué orden va? </p>
+							<a class="ss" href="https://www.jigsawplanet.com/?rc=play&amp;pid=3d049aa659fa" target="_blank" style="display:block;text-decoration:none;position:relative;width:160px;margin:0 auto .4em auto">
+								<img alt="preview" style="display:block;border:1px #DCDCDC solid;box-shadow:2px 2px 5px rgba(192,192,192,0.3)" src="https://im.jigsawplanet.com/?rc=img&amp;pid=3d049aa659fa&amp;size=160" />
+								<span style="position:absolute;right:5px;bottom:4px"><span style="font:bold 120% Verdana,sans-serif;color:#DCDCDC;text-shadow:1px 1px 2px #DCDCDC;vertical-align:middle">36 </span>
+								<img style="border:0;vertical-align:middle" src="https://www.jigsawplanet.com/img/preview/piece.png" alt="piece" /></span></a>						
+						<br/><a href="https://kahoot.it/" target="blank"><img width="80%" src="images/kahoot.png" alt="Kahoot" /></a>
+						<br/><br/>
+						
+						<div style="margin-left:20%;">							
+							<video width="120%" controls style="float: right;">
+								<source src="video/escala.mp4" type="video/mp4">						  
+								Tu navegador no soporta la visualización de este video
+							</video>							
+						</div>
+						</span>
+						</center>
+					</div>											
+					<iframe src="https://quizlet.com/391907720/match/embed?i=21p88q&x=1jj1" style="float:left; width:100%; height:500px; border:1px solid black; background-color: black;"></iframe>
+					<iframe src="https://www.solarsystemscope.com/iframe" width="900" height="720" style="min-width:500px; min-height: 400px; border: 2px solid #0f5c6e;"></iframe>					
+					
+					<div style="float:left; margin-right: 1%; background-color: black;">						
+							<center>
+							<!--<object type="application/x-shockwave-flash" data="swf/lunarphasequizzer.swf" width="600" height="400" id="animacionEstaciones">
+									<param name="movie" value="swf/lunarphasequizzer.swf"/>
+									<param name="FlashVars" value="numLon=11"/>
+							</object>	-->							
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/-5R1Xgr3Gq0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/SkmKUErDfII" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</center>
+
+					</div>
+					
+					
+					<div style="float:left; margin-right: 1%; background-color: black;">						
+						<center>
+							<video width="70%" controls style="float:center; margin-right:5%">
+							  <source src="video/SolarSystemFormation.mp4" type="video/mp4">						  
+							  Tu navegador no soporta la visualización de este video
+							</video>
+						</center>
+					</div>
+				</div>
+				<div id="Meteoritos" class="hidden" style="text-align:justify; margin-right: 3%;">
+					<div class="menuTitle"> METEORITOS, ASTEROIDES, COMETAS </div>
+					
+					<br/>Las regiones de residuos en nuestro Sistema Solar de mayor a menor cercanía son:
+
+					<ul>
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Objeto_pr%C3%B3ximo_a_la_Tierra" style="font-weight: bold;" target="blank">NEO (Objetos Cercanos a la Tierra)</a>: objetos (asteroides, meteoros, cometas) que orbitan cerca de la Tierra, de los cuales se monitorizan los PHO (Potentially hazardous object), cuando se acercan a menos de 0,005 UA.</li>
+
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Objeto_pr%C3%B3ximo_a_la_Tierra" style="font-weight: bold;" target="blank">Cinturón principal de asteroides</a>: región entre Marte y Júpiter, a 2-4 UA. El extremo exterior está formado por condritas carbonáceas y el interior por condritas ordinarias. Los 4 objetos más grandes y que suman más de la mitad de toda la masa son Ceres, Vesta, Pales e Higia. El 80-90% de los objetos que colisionan con la Tierra provienen del cinturón principal.</li>
+
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Cintur%C3%B3n_de_asteroides" style="font-weight: bold;" target="blank">Cinturón de Kuiper</a>: región que contiene objetos formados por roca y/o hielo más allá de la órbita de Plutón, entre 30-50 UA. Los cometas de periodo corto provienen del cinturón de Kuiper, como el famoso <a class="link" href="https://es.wikipedia.org/wiki/Cometa_Halley" target="blank">cometa Halley</a>, de la imagen.</li>
+
+						<li><a class="link" href="https://es.wikipedia.org/wiki/Nube_de_Oort" style="font-weight: bold;" target="blank">Nube de Oort</a>: región que contiene "hielo sucio" mucho más allá de la órbita del Cinturón de Kuiper, a 50.000 UA. Se calcula que debe haber alrededor de 1013 objetos. Los cometas de periodo largo provienen de la Nube de Oort</li>
+					</ul>
+					<div style="float:left; width=70%; display:flex; padding:7px; margin-right:4%;">												
+							<div style="width:50%; flex-grow: 0; flex-shrink: 0;  flex-basis: 50%;">					
+								<img src="images/halley-typecomet.gif" alt="Órbita del cometa Halley"/>							
+								<!--<img src="images/step.JPG" width="72%" alt="Pisada de Neil Armstrong en la Luna" title="Pisada de Neil Armstrong en la Luna">-->
+								<span><span>Órbita del cometa Halley</span></span>
+							</div>	
+							<div style="flex-grow: 0; flex-shrink: 0;">		
+								<!--<img src="images/trails.JPG" width="115%" alt="Trazas del Curiosity en Marte" title="Trazas del Curiosity en Marte">-->
+								<img src="images/oort.JPG" width="75%" alt="Cinturón de Kuiper y Nube de Oort"/>
+								<span><span>Cinturón de Kuiper y Nube de Oort</span></span>
+							</div>
+							<br/>
+					</div>
+					<div style="float:right;">
+						<br/><br/>
+						Los cometas están débilmente influidos por la gravedad de la Tierra y, a diferencia de las órbitas casi circulares de los planetas, sus órbitas normalmente son ladeadas y con una alta excentricidad. Están formados por hielo, hecho que provoca que a medida que se acercan al Sol, parte de este hielo se funda, liberando residuos de polvo y roca que se diseminan a lo largo de su trayectoria, formando la conocida cola.
+					</div>
+					
+					<div style="center;">
+					<a target="_blank" href="images/meteoritos.JPG">
+							<img class="small" src="images/meteoritos.JPG" alt="Terminología de Meteoritos"  title="Terminología de Meteoritos" style="width:150px" />
+							<span><span>Terminología de Meteoritos</span></span>
+					</a>
+				</div>
+					
+				</div>			
+				<div id="Estaciones" class="hidden col-12" style="text-align:justify; margin-right: 3%;">
+				
+					<div  style="float:left;" class="menuTitle"> ESTACIONES DEL AÑO</div>
+				
+					<div style="float:left; text-align:justify; margin-right: 3%;">
+						<div style="float:left; margin-right: 1%;">					
+						<span style="font-size:10px;">Simulación realizada en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a> <a target="blank" href="https://www.youtube.com/watch?v=Msnah_xkwAs&feature=emb_logo"> (descargar) </a></span>	<br/>						
+							<object type="application/x-shockwave-flash" data="swf/seasons_ecliptic.swf" width="600" height="400" id="animacionEstaciones2">
+									<param name="movie" value="swf/seasons_ecliptic.swf"/>
+									<param name="FlashVars" value="numLon=11"/>
+							</object>								
+						</div>
+						<div style="text-align:justify; margin-right: 3%;">
+							<br/>
+							Una de las ideas equivocadas más extendidas en astronomía se refiere a que las estaciones del año se deben a la distancia variable de la Tierra al Sol. Aunque las órbitas de los planetas son elípticas, es importante señalar que la excentricidad en el caso de la Tierra es baja (0,0167), y por lo tanto su órbita es casi circular y la distancia al Sol no varía mucho. De hecho, la Tierra está más cerca del Sol (perihelio) durante el invierno del hemisferio norte, en enero y 5 millones de Km. más lejos (afelio) durante el verano, en julio. En realidad, <font style="font-weight: bold;">las estaciones del año se deben a la inclinación del eje de giro de la Tierra respecto al plano de su órbita respecto al Sol</font>. Algunas regiones reciban distinta cantidad e intensidad de luz solar según la época del año. 
+							<br/><br/>
+							Dependiendo de la latitud y de la altura, los cambios meteorológicos son o bien mínimos como en el ecuador, o máximos, como en las zonas de latitudes medias y subtropicales, donde se experimentan las cuatro estaciones.
+							<br/><br/>
+							En la simulación de la izquierda, moviendo la Tierra alrededor del Sol, se puede comprobar cómo varía la inclinación de los rayos Solares. El muñeco también se puede trasladar para constatar el cambio según la latitud. Al pulsar <font style="font-style: italic;">start animation </font>(abajo a la derecha), se ve cómo transcurre un año terrestre.
+						</div>							
+					</div>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/t3Pr1chvl5g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>							
+				</div>
+            	<div id="Orbitas" class="hidden col-12" style="text-align:justify; margin-right:3%;">					
+					
+					<div class="menuTitle"> ÓRBITAS </div>
+					
+						Según la <b>primera ley de Kepler</b>, los planetas se mueven alrededor del Sol en trayectoria elípticas, estando el Sol en uno de los focos de la elipse.  
+						
+						<video width="20%" controls style="float: right;">
+						  <source src="video/Kepler2.mp4" type="video/mp4">						  
+						  Tu navegador no soporta la visualización de este video
+						</video>
+						
+						<br/> <br/>
+						La <b>segunda ley</b>, conocida como la ley de las áreas, tiene como consecuencia que el planeta recorre áreas iguales en tiempos iguales y el efecto es que la velocidad del planeta aumenta a medida que se acerca al Sol. <br/><br/>
+								
+						<b>La tercera ley de Kepler</b> establece que el cuadrado del período orbital de un planeta es proporcional al cubo de su semieje mayor. El semieje mayor (a) es la mitad del diámetro más largo. El video ilustra el comportamiento de un planeta en su órbita debido a la tercera ley de Kepler.<br/> <br/>
+								<img src="images/formulaKepler3.JPG" width="8%" style="text-align: center;" alt="fórmula de Kepler"/>
+								<img src="images/semieje.JPG" width="17%"  style="float: right;" alt="gráfico orbita"/>
+							
+					<br/>	<br/> <br/>
+					
+					Partiendo de la tercera ley de Kepler y conociendo el periodo orbital (P) del planeta buscado y de la masa de la estrella Ms, se deduce el semieje mayor de la órbita (a).
+					
+					Sabemos que: <br/> <br/> 
+					
+					<table border="0">
+						<tr>
+							<td> <img src="images/formulaKepler.JPG" width="70%" style="text-align: center;" alt="fórmula de Kepler"/> 
+							</td>
+							<td>
+								<br/>
+								Introduce los datos conocidos:<br/> <br/>				
+								<table> 						
+									<tr><td>Periodo orbital (años sidéreos)</td><td> <input type="number" id="d1" min="0" class="camp" /></td></tr>
+									<tr><td>Masa de la estrella (Ms)</td><td><input  type="number" id="d2" min="0" style="width: 10em" /></td></tr>
+									<tr><td colspan="2"><center><br/><button class="ButtonSubmit" id="solKepler"> Calcular semieje mayor de la órbita</button></center></td></tr>					
+								</table>																														
+							</td>
+						</tr>					
+					</table>
+					<br/>
+					<div id="resultatOrbita" class="menuTitle"></div>															
+										
+					<div style="font-style: italic; font-size:small;text-align: right;">1 unidad astronómica = 1,58×10<sup>5</sup> Km.</div>
+					<br/>
+					<div style="float:left; text-align:justify; margin-right:3%;">
+						<div style="float:left; margin-right:1%;">	
+							<span style="font-size:10px;">Simulación realizada en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a> <a target="blank" href="https://www.youtube.com/watch?v=Msnah_xkwAs&feature=emb_logo"> (descargar) </a></span>	<br/>						
+							<!--<object type="application/x-shockwave-flash" data="swf/kepler.swf" width="1000" height="800" id="animacionKepler">
+											<param name="movie" value="swf/kepler.swf"/>
+											<param name="FlashVars" value="numLon=11"/>
+							</object>							-->
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/_3nHs1mr-sA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<div style="text-align:justify; margin-right:3%;">
+							<br/>Mediante este simulador realizado en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a>, se puede comprobar cómo un planeta orbita el Sol de acuerdo con las leyes de movimiento de Kepler. La animación se activa con el botón <span style="font-style:italic;"> Start Animation </span>. La posición del planeta en el diagrama puede ajustarse también arrastrándolo con el ratón del ordenador.
+							<br/><br/>El tamaño y la excentricidad de la órbita del planeta se pueden configurar con los controles deslizantes en el panel <span style="font-style:italic;"> Orbit settings </span> (Configuración de la órbita).
+							Se puede escoger un planeta de nuestro Sistema Solar en el desplegable y los parámetros se ajustan automáticamente.
+							Dado que los planetas tardan meses o años en orbitar el sol, la animación se muestra acelerada, pero se puede regular la velocidad en años por segundo en el panel <span style="font-style:italic;"> Animation Controls</span> (Controles de animación).
+							<br/><br/> En el panel de <span style="font-style:italic;"> Visualization options </span> (Opciones de visualización) se puede escoger mostrar las órbitas de los demás planetas del sistema solar, aunque hay que tener en cuenta que, aunque las órbitas de los planetas se muestran en el mismo plano, no es así en realidad.
+							<br/><br/>El panel inferior permite controlar con pestañas las opciones específicas de cada una de las leyes de Kepler. Los barridos creados con los controles de la segunda ley de Kepler se pueden arrastrar también con el ratón del ordenador. La pestaña de Características Newtonianas muestra los vectores de velocidad y aceleración del planeta. 
+						</div>
+					</div>
+				</div>
+            </div>			
+            
+            <div id="Estrellas" class="hidden menuLateral">
+				<div class="col-10 col-s-10">
+					<div id="menuEspectrografia" class="menuSuperior">Espectrografía</div>
+					<div id="menuTiposEstrellas" class="menuSuperior">Tipos de estrellas</div>					
+					<div id="menuCoordenadas" class="menuSuperior">Coordenadas</div>				
+				</div>
+				<div id="Espectrografia" class="hidden col-12" style="text-align:justify; margin-right:3%;">
+					<div style="float:right;"><a href="docs/Taller3.1.Estrellas.EspectrosYTiposDeEstrellas.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>											
+					<div class="menuTitle"> ESPECTROGRAFÍA </div>
+					<div  style="float:left; text-align:justify; margin-right:3%;">
+						<div style="width: 600px; height: 400px; float:left; margin-right:1%;">
+						<span style="font-size:10px;">Simulación realizada en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a>  <a target="blank" href="https://www.youtube.com/watch?v=Msnah_xkwAs&feature=emb_logo"> (descargar) </a></span>	<br/>						
+							<object type="application/x-shockwave-flash" data="swf/spectrum010.swf" width="600" height="400" id="animacionEspectrografia">
+											<param name="movie" value="swf/spectrum010.swf"/>
+											<param name="FlashVars" value="numLon=11"/>
+							</object>
+							<!-- https://astro.unl.edu/classaction/animations/light/spectrum010.html -->					
+						</div>
+						<div style="text-align:justify; margin-right:3%;"><br/>Mediante este explorador de espectros, se pueden simular una diversidad de espectros de emisión y absorción dependiendo de los elementos químicos seleccionados  y la clase de luminosidad. <br/><br/>
+						<img src="images/tiposEspectrales2.JPG" width="50%" alt="Tipos Espectrales"/>
+						<span><span>Líneas típicas según tipos espectrales</span></span>
+						</div>
+					</div>
+					<div  style="float:left; text-align:justify; margin-right:3%;">
+					<table border="0px">
+						<tr><td>
+						<div style="width:600px; float:left; font-size:16px; font-family:Arial; text-align:justify; margin-right:1%;"><br/>La siguiente simulación indica cómo los astrónomos pueden saber si una estrella o planeta se acerca o aleja de nosotros, dependiendo de la traslación de sus líneas espectrales.
+						</div>
+						</td>
+						<td>
+						<div style="width: 600px; height: 400px; margin-right:1%;">
+						<span style="font-size:10px;">Simulación realizada en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a> <a target="blank" href="https://www.youtube.com/watch?v=Msnah_xkwAs&feature=emb_logo"> (descargar) </a></span>	<br/>						
+							<object type="application/x-shockwave-flash" data="swf/radialvelocitydemo.swf" width="600" height="400" id="animacionEspectrografia2">
+											<param name="movie" value="swf/radialvelocitydemo.swf"/>
+											<param name="FlashVars" value="numLon=11"/>
+							</object>
+							<!-- https://astro.unl.edu/classaction/animations/light/radialvelocitydemo.html -->					
+						</div>						
+						</td>
+						</tr>
+						</table>
+					</div>
+				</div>	
+				<div id="TiposEstrellas" class="hidden col-12" style="text-align:justify; margin-right:3%;">					
+					<div  style="float:left;" class="menuTitle"> TIPOS DE ESTRELLAS </div>					
+					<div  style="float:left; text-align:justify; margin-right:3%;">
+						<div style="width: 805px; height: 665px; float:left; margin-right:1%;">
+						<span style="font-size:10px;">Simulación realizada en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a> <a target="blank" href="https://www.youtube.com/watch?v=Msnah_xkwAs&feature=emb_logo"> (descargar) </a></span>	<br/>						
+						<!--	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="805" height="665">
+							<param name="movie" value="swf/hrExplorer.swf" /> -->
+							 <!--[if !IE]>-->
+							 <!--<object type="application/x-shockwave-flash" data="swf/hrExplorer.swf" width="805" height="665">-->
+							 <!--<![endif]-->
+							<!--<p>Diagrama Hertzsprung-Russell <span style="font-style: italic;">(se necesita activar el Flash)</span></p>-->
+							 <!--[if !IE]>-->
+							 <!--</object>-->
+							 <!--<![endif]-->
+							<!--</object>-->
+							<iframe width="800" height="450" src="https://www.youtube.com/embed/MVM-v2RVdos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+						<!-- https://astro.unl.edu/naap/hr/animations/hr.html -->
+						<div style="text-align:justify; margin-right:3%;"><br/><br/>Esta animación interactiva del diagrama de <a class="link" href="https://es.wikipedia.org/wiki/Diagrama_de_Hertzsprung-Russell" target="blank" style="font-style:font-weight; font-variant: small-caps;">Hertzsprung-Russell</a>, permite comprobar la relación entre la luminosidad y la temperatura de las estrellas. <br/>
+						<br/>La <span style="color:red; font-style:font-weight;">x roja </span>del panel superior derecho representa una estrella con las propiedades de temperatura y la luminosidad indicadas en el panel inferior izquierdo llamado <span style="font-style: italic;">Cursor Properties</span> (Propiedades del cursor). La estrella (x roja) se puede cambiar de ubicación, ya sea arrastrándola o ajustando los controles deslizantes del <span style="font-style: italic;">Cursor Properties</span>. <br/>
+						 <br/>Opcionalmente, se puede seleccionar mostrar características como la secuencia principal, las líneas de isoradius (líneas a lo largo de las cuales todas las estrellas tienen el mismo radio), clases de luminosidad y la franja de inestabilidad (donde se encuentran las estrellas pulsantes). <br/>
+						 <br/>En el panel superior izquierdo se puede ver la comparación de tamaño entre nuestro Sol y la estrella.<br/>
+						<br/>Las escalas x e y también se pueden cambiar. Esto es posible porque la temperatura y la luminosidad se pueden correlacionar con magnitudes absolutas o índices de color.<br/>
+						<br/>Mediante la sección <span style="font-style: italic;">Plotted Stars</span> (estrellas medidas), también se pueden dibujar en el diagrama las estrellas más cercanas y/o más brillantes.<br/>
+						<br> Asimismo, con la simulación <a class="link" target="blank" style="font-style:font-weight; font-variant: small-caps;" href="https://starinabox.lco.global/">Star in a Box</a> se pueden comprobar las fases de evolución estelar. <br/>
+						<br/> En el marco del proyecto Escape Earth, el objetivo de la práctica es averiguar el tipo espectral de la estrella a partir de los datos de temperatura y magnitud que se nos han pasado.<br/>
+						<img src="images/tiposEspectrales.JPG" width="40%" alt="Tipos Espectrales"/>
+						<span><span>Temperaturas y tipos espectrales</span></span>
+						</div>
+					</div>
+					
+				</div>
+							
+            	<div id="Coordenadas" class="hidden" style="text-align:justify; margin-right:3%;">
+					<div style="float:right;"><a href="docs/Taller3.2.Estrellas.Coordenadas.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>											
+
+					<div class="menuTitle"> COORDENADAS </div>		
+					<br/>
+					<a href="https://es.wikipedia.org/wiki/Esfera_celeste" style="font-weight:bold; float:left;" class="buttonCondiciones" target="blank">Esfera celeste</a><br/>					
+					<div style="float:left; text-align:justify; margin-right:3%;">					
+						<div style="width: 480px; height: 400px; float:left; margin-right:1%;">
+							<object type="application/x-shockwave-flash" data="swf/celestialhorizon.swf" width="480" height="400" id="flatmap4">
+								<param name="movie" value="swf/celestialhorizon.swf"/>
+								<param name="FlashVars" value="numLon=11"/>
+							</object>
+						</div>
+						<div style="text-align:justify; margin-right:3%;">
+							<br/><br/>
+							Situados en cualquier lugar de la superficie terrestre se ve el cielo como si se estuviera en el centro de una esfera. Esta superficie esférica recibe el nombre de esfera celeste y va cambiando a lo largo que la Tierra se mueve, dando la apariencia que el cielo se mueve, con sus estrellas y planetas.						
+							Con el botón de <span style="font-style:italic;">Switch </span> (cambio) se puede cambiar la visión del diagrama horizontal al de la esfera celeste.<br/><br/>
+							Como ejercicio, se propone cambiar la latitud del observador, provando entre diferentes localizaciones: ecuador, polo, hemisferio norte, sur...<br/><br/>
+							
+							<span> Nota: todas las simulaciones realizadas en Flash son de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a> <a target="blank" href="https://www.youtube.com/watch?v=Msnah_xkwAs&feature=emb_logo"> (descargar) </a></span>	<br/>											
+
+						</div>						
+					</div>
+					
+					<a href="https://es.wikipedia.org/wiki/Coordenadas_horizontales" style="font-weight:bold; float:left;" class="buttonCondiciones" target="blank">Coordenadas horizontales</a><br/>					
+					<div style="float:left; text-align:justify; margin-right:3%;">
+						<br/>					
+						<div style="width: 600px; height: 400px; float:left; margin-right:1%;">
+							<object type="application/x-shockwave-flash" data="swf/altazimuth.swf" width="600" height="400" id="flatmap3">
+								<param name="movie" value="swf/altazimuth.swf"/>
+								<param name="FlashVars" value="numLon=11"/>
+							</object>
+						</div>
+						<div style="text-align:justify; margin-right:3%;">					
+							Desde el punto de vista del observador, la posición de un astro sobre la esfera celeste viene determinada por dos coordenadas llamadas <a class="link" href="https://es.wikipedia.org/wiki/Coordenadas_horizontales" style="font-weight:bold;" target="blank">horizontales</a>. :<br/>
+							<div style="text-align:justify; margin-right:3%;">								
+								<br/><br/><span style="font-weight:900;">Acimut</span><br/>
+								Ángulo a lo largo del horizonte desde el Norte hasta la vertical de la estrella en dirección Oeste o desde el Sur en dirección Este, dependiendo del hemisferio donde se encuentre el observador. Puede variar entre 0° y 360°.
+								<br/><span style="font-weight:900;">Altura</span><br/>
+								Ángulo desde el horizonte hasta la estrella. Puede variar entre entre -90° y +90°, siendo negativo cuando el astro se halle bajo el horizonte y positivo cuando esté por encima.
+								<br/><br/>Además, se definen:
+								<div style="text-align:justify; margin-right:3%; margin-left:50%;">
+									<span style="font-weight:900;">Cenit</span><br/>
+									Punto de la esfera celeste situado en la vertical del observador.
+									<br/><br/><span style="font-weight:900;">Nadir</span><br/>
+									Es el punto opuesto al cenit en la vertical, que queda por debajo del observador.
+									<br/><br/><span style="font-weight:900;">Meridiano</span><br/>
+									Meridiano de referencia, llamado meridiano del lugar, que es el que pasa por el punto del observador, el cenit y el polo norte.
+									<br/><br/><br/>
+								</div>
+							</div>
+						</div>						
+					</div>
+					<br/><br/>
+					<a href="https://es.wikipedia.org/wiki/Coordenadas_ecuatoriales" style="font-weight:bold; float:left;" class="buttonCondiciones" target="blank">Coordenadas ecuatoriales</a><br/>					
+					<div style="float:left; text-align:justify;">					
+						<table border="0">
+							<tr>
+								<td>
+									<div style="text-align:justify; font-size:16px;">
+										<br/>
+										Las coordenadas ecuatoriales permiten ubicar un astro en la esfera celeste respecto al ecuador celeste y el equinoccio vernal, de manera que son independientes del observador. Las coordenadas del sistema son: <br/>
+										<div style="text-align:justify; float:left;">
+											<br/><span style="font-weight:900;">Declinación</span><br/>
+											δ, ángulo entre el ecuador celeste y la posición de la estrella, medido a lo largo del meridiano celeste que pasa por el astro. Varía entre 0° y +90° en el hemisferio celeste boreal, y entre 0° y -90° en el hemisferio austral.
+											<br/><br/><span style="font-weight:900;">Ascensión recta</span><br/>
+											α ángulo medido hacia el este a lo largo del ecuador celeste, desde el punto vernal hasta el meridiano celeste que pasa por el astro. La ascensión recta se mide de 0 a 24 horas.
+											<br/><br/>Además, se definen:
+											<div style="text-align:justify; margin-left:10%">
+												<span style="font-weight:900;">Eclíptica</span><br/>
+												Línea por donde «transcurre» el Sol alrededor de la Tierra, en su movimiento aparente visto desde la Tierra.
+												<br/><br/><span style="font-weight:900;">Ecuador celeste</span><br/>
+												Círculo imaginario en la esfera celeste que es la proyección del ecuador terrestre.
+												<br/><br/><span style="font-weight:900;">Punto vernal</span><br/>
+												Punto de la eclíptica a partir del cual el Sol pasa del hemisferio sur celeste al hemisferio norte, fenómeno que ocurre en el equinoccio de marzo. 
+											</div>
+										</div>
+									</div>	
+								</td>
+								<td>
+									<div style="width: 600px; height: 400px;">
+										<object type="application/x-shockwave-flash" data="swf/radecdemo.swf" width="600" height="400" id="flatmap">
+											<param name="movie" value="swf/radecdemo.swf"/>
+											<param name="FlashVars" value="numLon=11"/>
+										</object>
+									</div>
+								</td>
+							</tr>							
+						</table>
+						<br/>						
+					</div>
+					<a href="https://es.wikipedia.org/wiki/Conversi%C3%B3n_de_coordenadas_ecuatoriales_a_coordenadas_horizontales" style="font-weight:bold; float:left;" class="buttonCondiciones" target="blank">Cambio de coordenadas</a><br/>					
+					<br/><br/>
+					<div style="float:left; width:100%; text-align:justify; margin-right:3%;">
+						<div style="text-align:center;">
+							Introduce los datos conocidos:<br/> <br/>				
+									<table style="margin-left:auto; margin-right:auto;"> 						
+										<tr><td>Ascensión recta (&alpha;) </td><td> <input type="number" id="z1" min="-90"  max="90" class="camp" />h</td><td> <input type="number" id="z2" min="0" class="camp" />m</td><td> <input type="number" id="z3" min="0" class="camp" />s</td></tr>
+										<tr><td>Declinación (&delta;)</td><td><input  type="number" id="z4" min="0" style="width: 10em" />&#176;</td><td> <input type="number" id="z5" min="0" class="camp" />'</td><td> <input type="number" id="z6" min="0" class="camp" />''</td></tr>
+										<tr><td>Latitud (&Phi;)</td><td><input  type="number" id="z7" min="0" style="width: 10em" />&#176;</td><td> <input type="number" id="z8" min="0" class="camp" />'</td><td> <input type="number" id="z9" min="0" class="camp" />''</td></tr>
+										<tr><td>Longitud</td><td><input  type="number" id="z10" min="0" style="width: 10em" />&#176;</td><td> <input type="number" id="z11" min="0" class="camp" />'</td><td> <input type="number" id="z12" min="0" class="camp" />''</td></tr>
+										<tr><td colspan="4"><center><br/><button class="ButtonSubmit" id="solCoordenadas"> Calcular coordenadas ecuatoriales</button></center></td></tr>					
+									</table>
+						</div>			
+						<br/>
+						<div id="resultatCoordenades" class="solucio" style="margin-left: auto;">		</div>						
+					</div>
+					<br/><br/><br/><br/>
+					<a href="https://es.wikipedia.org/wiki/Movimiento_diurno" style="font-weight:bold; float:left;" class="buttonCondiciones" target="blank">Movimiento aparente</a><br/>					
+					<div style="float:left; text-align:justify; margin-right:3%;">
+						<br/>					
+						<div style="width: 720px; height: 600px; float:left; margin-right:1%;">
+							<object type="application/x-shockwave-flash" data="swf/celhorcomp.swf" width="720" height="600" id="flatmap2">
+								<param name="movie" value="swf/celhorcomp.swf"/>
+								<param name="FlashVars" value="numLon=11"/>
+							</object>
+						</div>
+						<div style="text-align:justify; margin-right:3%;">
+							<br/><br/>
+							Este simulador muestra cómo la rotación de la tierra produce el movimiento aparente de las estrellas en el cielo.<br/><br/>
+							En el panel izquierdo, la tierra se muestra en el centro de la esfera celeste. El panel de la derecha muestra el diagrama de horizonte correspondiente para un observador en la posición indicada en el globo terráqueo. <br/><br/>
+							A medida que la Tierra gira, parece que el cielo esté girando y las estrellas salen y se ponen. Haciendo clic en el botón <span style="font-style:italic;">Add star randomly </span> (Agregar estrella al azar) se añaden estrellas en los dos paneles. La otra forma de agregar una estrella es mantener presionada la tecla "Mayús" y hacer clic en cualquier lugar de la esfera. <br/><br/>
+							Si se hace clic en una estrella, se muestran sus coordenadas en los sistemas ecuatoriales y horizontales.  
+							<br/><br/>La ubicación del observador se puede configurar en el panel <span style="font-style:italic;">Observer's location </span>, (abajo a la izquierda), editando los campos de texto, o haciendo clic en una ubicación en el mapa, o usando las flechas del teclado. 
+							<br/><br/>Se muestran los trayectos de estrellas en el diagrama del horizonte con las opciones <span style="font-style:italic;">star trails </span> 
+							<br/><br/>Para poner en movimiento la simulación, se pulsa el botón <span style="font-style:italic;">Start animation </span> y se puede configurar para una hora, tres, seis, doce horas o sin tiempo límite.
+						</div>						
+					</div>	
+				</div>				
+			</div>
+			
+			<div id="Exoplanetas" class="hidden menuLateral">				
+				<div class="col-10 col-s-10">			
+					<div id="menuCurvasdeluz"  class="menuSuperior">Curvas de luz</div>				
+					<div id="menuTransitos" class="menuSuperior">Tránsitos planetarios</div>					
+					<div id="menuDensidad" class="menuSuperior">Densidad</div>					
+					<div id="menuTemperatura" class="menuSuperior">Temperatura</div>					
+					<div id="menuLocGalaxia"  class="menuSuperior">Zona de Habitabilidad Galáctica</div>			
+					<div id="menuZonaHabitabilidad"  class="menuSuperior">Zona de Habitabilidad</div>							
+					<div id="menuBasesDeDatos"  class="menuSuperior">Bases de Datos</div>							
+					<div id="menuMisiones"  class="menuSuperior">Misiones</div>							
+					<div id="menuExposicion"  class="menuSuperior">Exposición Final</div>							
+				</div>			
+				
+            	<div id="Transitos" class="hidden col-12" style="text-align:justify; margin-right:10%;">				
+					
+					<div class="menuTitle"> TRÁNSITOS PLANETARIOS </div>
+					
+					<div class='img'  style="float:left"><img src="images/2012_Transit_of_Venus_from_Amman,_Jordan.jpg" alt="Transito de Venus 2012" style="float:left; margin-right:10px"/>
+					<span><span>Transito de Venus en 2012 <a style="color:white;" href="https://commons.wikimedia.org/w/index.php?curid=19825365">Wikimedia</a></span></span></div>
+													
+					<div style="text-align:justify; margin-right:10%;">
+						Cuando un planeta cruza por delante de una estrella tapándola parcialmente, ocurre un tránsito planetario. En nuestro sistema Solar se puede observar cómo Mercurio y Venus pasan por delante del Sol, tal y como se puede observar en la fotografía del tránsito de Venus del 2012.<br/><br/>
+						
+						Mediante el cálculo de la pérdida de luminosidad de la estrella en el momento de tránsito, se puede calcular el radio del planeta, conociendo previamente el radio de la estrella. 
+						
+						Sabemos que: <br/> <br/> <img src="images/formulaTransito.png" width="400px" style="float:left" alt="Fórmula del tránsito"/> <br/>
+						
+														
+						donde <b><i>R<sub>p</sub></i></b> es el radio del planeta a buscar y <b><i>R<sub>e</sub></i></b> es el radio de la estrella.<br/><br/>
+						
+						A la relación <img src="images/formulaTransito2.png" width="200px" style="float:center" alt="Profundidad de tránsito"/>  se le llama Profundidad de tránsito.
+						
+						 <br/> <br/> Introducimos los datos conocidos:<br/> <br/>				
+							<table> 
+							<!--	<tr><td>Brillo máximo</td><td> <input type="number" id="a1" min="0" style="width: 10em" /></td></tr>-->
+								<tr><td>Brillo máximo</td><td> <input type="number" id="a1" min="0" class="camp" /></td></tr>
+								<tr><td>Brillo mínimo</td><td><input  type="number" id="a2" min="0" style="width: 10em" /></td></tr>
+								<tr><td>Profundidad de tránsito (si no se dispone del brillo)</td><td><input  type="number" id="a4" min="0" style="width: 10em" /></td></tr>
+								<tr><td>Radio de la estrella (en relación al Sol)</td><td><input type="number" id="a3" min="0" style="width: 10em" /></td></tr>					
+							<!--	<tr><td colspan="2"><center><button id="sol"> Calcular radio del planeta</button></center></td></tr>					-->
+								<tr><td colspan="2"><br/><center><button id="sol" class="ButtonSubmit"> Calcular radio del planeta</button></center></td></tr>					
+							</table>	
+													
+							<br/><br/>
+							<div id="resultat" class="menuTitle"></div>
+						
+						<br/>  
+					</div>					
+						
+				</div>									
+								
+				<div id="Curvasdeluz" class="hidden">
+					<div style="float:right;"><a href="docs/Taller4.1.Exoplanetas.Metodosdedeteccion.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> CURVAS DE LUZ</div>
+					<div style="float:left;">
+					
+					<img  src="images/OSNanimkurzloop.gif" alt="Transito de Venus 2012" style="float:left; margin-right:10px" width="25%"/> <br />
+					
+					La luminosidad que llega de una estrella puede representarse en función del tiempo como una curva de luz.
+
+					
+					 <br/> <br/> Introduce los datos conocidos:<br/> <br/>				
+						<table> 
+							<tr><td>Luminosidad en Tiempo 1</td><td> <input type="number" id="b1" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Luminosidad en Tiempo 2</td><td><input  type="number" id="b2" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Luminosidad en Tiempo 3</td><td><input  type="number" id="b3" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Luminosidad en Tiempo 4</td><td><input  type="number" id="b4" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Luminosidad en Tiempo 5</td><td><input  type="number" id="b5" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Luminosidad en Tiempo 6</td><td><input  type="number" id="b6" min="0" style="width: 10em" /></td></tr>						
+							<tr><td colspan="2"><center><br/><button id="grafica" class="ButtonSubmit"> Dibujar Curva de luz</button></center></td></tr>					
+						</table>
+					
+					<div class="container" id="container">	</div>				
+							
+					</div>
+				</div>				
+				<div id="Densidad" class="hidden col-12" style="text-align:justify; margin-right:3%;">										
+					<div style="float:right;"><a href="docs/Taller4.2.Exoplanetas.Densidad.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> DENSIDAD</div>
+					<div style="float:left;">																	
+					A partir de la masa del planeta, calcularemos su densidad. Sabemos que la densidad depende de la masa y el volumen:	<img src="images/formulaDensidad.JPG" width="7%" style="text-align: center; vertical-align: sub; " alt="fórmula de la Densidad"/>				
+													
+					. El volumen viene dado por la fórmula de la esfera:  <img src="images/formulaVolumen.JPG" width="10%" style="text-align: center; vertical-align: sub; " alt="fórmula de la Densidad"/>												 							
+						
+						<div id ="graficaDensidad" class="col3">																
+						<br/><br/><br/><br/>
+							<div id="pGaseoso" class="planetaGaseoso2 tooltip2"><span class="tooltiptext2">Gigantes Gaseosos</span></div>							
+								
+							<div class="col9" style="margin-left: 600px;">							
+								<table> 						
+										<tr><td>Masa (M terrestre)</td><td> <input type="number" id="e1" min="0" class="camp" /></td></tr>
+										<tr><td>Radio (Km)</td><td><input  type="number" id="e2" min="0" style="width: 10em" /></td></tr>
+										<tr><td colspan="2"><center><br/><button id="solDensidad" class="ButtonSubmit"> Calcular densidad del planeta</button></center></td></tr>					
+								</table>
+								
+							</div>
+																					
+							<div id="pHelado" class="planetaHelado2 tooltip2"><span class="tooltiptext2">Gigantes Helados</span></div>	
+							<br/><br/>
+							<div id="pRocoso" class="planetaRocoso2 tooltip2"><span class="tooltiptext2">Tierra</span></div>								
+							 <div id="resultatDensitat" class="solucio" style="margin-left: 150px;">		</div>
+							 <br/><br/>
+							 <div id="preguntaDensidad" class="pregunta"> </div>														
+
+						</div>	
+					</div>
+				</div>	
+				
+				<div id="Temperatura" class="hidden col10 col-s-10">	
+					<div style="float:right;"><a href="docs/Taller4.3.Exoplanetas.Temperatura.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> TEMPERATURA</div>
+					<div style="float:left;">
+																		
+					<br/>La temperatura de equilibrio (T<sub>eq</sub>) de un planeta entre la radiación que absorbe de su estrella y la radiación que emite, viene dada por: <br/>
+					<img src="images/formulaTemperatura.JPG" width="25%" style="text-align: center; vertical-align: sub; " alt="fórmula de la Temperatura"/><br/>				
+													
+					donde <strong>T <sub>S</sub></strong> es la temperatura de la estrella, <strong>A</strong> el albedo, <strong>R<sub>S</sub></strong> el radio de la estrella, y <strong>a</strong> el semieje mayor de la órbita del planeta.
+					
+					<br/> <br/> Introduce los datos conocidos:<br/> <br/>				
+						<table> 
+							<tr><td>Temperatura de la estrella (K)</td><td> <input type="number" id="f1" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Albedo</td><td><input  type="number" id="f2" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Radio de la estrella (Radios solares)</td><td><input  type="number" id="f3" min="0" style="width: 10em" /></td></tr>
+							<tr><td>Semieje mayor de la órbita (Radios solares)</td><td><input  type="number" id="f4" min="0" style="width: 10em" /></td></tr>							
+							<tr><td colspan="2"><br/><center><button id="solTemperatura" class="ButtonSubmit"> Calcular Temperatura del planeta</button></center></td></tr>					
+						</table>
+						<br/>
+						<div id="resultatTemperatura" class="solucio">		</div>	
+						<div style="font-style: italic; font-size:small;text-align: right;">1 kelvin = -272,15 grados Celsius</div>
+						<br/>						
+						<div id="preguntaTemperatura" class="pregunta"> </div>	
+					</div>
+										
+				</div>	
+				
+				
+				<div id="LocGalaxia" class="hidden col-12">
+				
+				<div style="float:right;"><a href="docs/Taller4.4.Exoplanetas.ZonadeHabitabilidadVs.Habitabilidad.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> ZONA DE HABITABILIDAD GALÁCTICA</div>
+				
+					<div style="float:left;">
+						<div style="float:left; margin-right: 1%;">											
+						<span style="font-size:10px;">Simulación realizada en Flash de la <a href="https://astro.unl.edu/animationsLinks.html" target="blank" class="link">Universidad de Nebraska - Lincoln</a> <a target="blank" href="https://www.youtube.com/watch?v=Msnah_xkwAs&feature=emb_logo"> (descargar) </a></span>	<br/>						
+							<object type="application/x-shockwave-flash" data="swf/milkyWayHabitability.swf" width="600" height="400" id="flatmap5">
+									<param name="movie" value="swf/milkyWayHabitability.swf"/>
+									<param name="FlashVars" value="numLon=11"/>
+							</object>									
+						</div>
+						<div style="text-align=justify; margin-right: 3%;">
+							<br/>
+							Moviendo las barras rojas de los gráficos, comprueba que la localización del sistema planetario en la Galaxia también es vital para la estabilidad de la vida. 
+							<br/><br/>
+							La primera gráfica, abajo a la izquierda, muestra que cuanto más cerca del núcleo de la Galaxia se está, más riesgo hay de emisión de rayos X, gamma y explosiones de supernova, radiaciones que son letales para la vida. 
+							<br/><br/>
+							La segunda gráfica, abajo a la derecha, indica la distribución de elementos más pesados que el H y el He, de manera que cuanto más alejado se está del centro, más “pobre” es el entorno en elementos químicos metálicos, hecho  que no permite la formación de planetas rocosos y por lo tanto tampoco favorece la vida. Se puede comprobar cómo el Sol está en una localización intermedia ideal para la vida, que se estima que comprende un anillo entre 4 y 10 kiloparsecs.
+						</div>	
+					</div>
+				</div>
+				
+				<div id="ZonaHabitabilidad" class="hidden col-12">
+				
+					<div style="float:right;"><a href="docs/Taller4.5.Exoplanetas.BasesdeDatosFichasdeSistemas.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div class="menuTitle"> ZONA DE HABITABILIDAD</div>				
+					
+					<div id="wrapper">
+						<div id="col1" class="col ui-droppable">  
+							Arrastra los planetas y ajusta su tamaño para construir tu sistema solar. <br/><br/>Observa cómo la<b> Zona de habitabilidad</b> (en verde) cambia en función del tipo de estrella.
+							<br/><br/>							
+							<div id="drag1" class="circleBase planetaRocoso tooltip"><span class="tooltiptext">Planeta rocoso</span></div>		
+							<br/>
+							<div id="drag3" class="circleBase planetaTierra tooltip"><span class="tooltiptext">Planeta Tierra</span></div>		
+							<div id="drag4" class="planetaAnillos tooltip"><span class="tooltiptext">Planeta Gaseoso</span></div>		
+							<div id="drag5" class="circleBase planetaHelado tooltip"><span class="tooltiptext">Planeta Helado</span></div>		
+							<div id="drag2" class="circleBase planetaGaseoso tooltip"><span class="tooltiptext">Júpiter Caliente</span></div>						
+						</div>
+					
+						<div class="ui-droppable" id ="droppable">					
+															
+							<div id="resizable4" class="circleBase zh tooltip"> 
+								<span id="starSpan" class="tooltiptext">Enana Naranja (K)</span>
+							</div>						
+							
+							<div id="remove-drag">
+								<div id="tip">Para eliminar arrastra aquí</div>
+							</div>		
+							
+											
+							<!-- https://tympanus.net/codrops/2012/08/08/circle-hover-effects-with-css-transitions/ 				
+					
+					https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_webpage&stacked=h -->
+						<!--<div id="axe"><img src="images/axes.png"/></div>-->
+						</div>	
+
+					
+					</div>	
+					
+					<br/>
+					
+					<div>
+						<div style="text-align:justify; margin-right:10%;">
+							Escoge los sistemas planetarios de la colección que sigue y "dibújalos" mediante el proceso de arrastrar y soltar teniendo en cuenta las distancias en unidades astronómicas. El color del recuadro del nombre del sistema indica qué tipo de estrella es (enana roja, naranja, estrella amarilla).
+							En el gráfico, el círculo verde indica la zona de habitabilidad, es decir, aquélla donde el agua es líquida según la distancia y el tipo de estrella. Para cada tipo de estrella, la zona de habitabilidad varía:
+							<ul>
+								<li>Enana marrón: 0,001 Unidades astronómicas</li>
+								<li>Enana roja (tipo M): de 0,032 a 0,3 u.a.</li>
+								<li>Enana naranja (tipo K): de 0,5 a 1 u.a.</li>
+								<li>Enana amarilla (tipo G): de 0,8 a 2 u.a.</li>
+								<li>Enana blanca-amarilla (tipo F): de 1 a 3,7 u.a.</li>
+							</ul>
+							Además, se puede modificar tanto el tamaño de los planetas como el de la misma estrella, hecho que provoca que la zona de habitabilidad también se acerque o se aleje. 
+							Al colocar el ratón encima de la estrella o los planetas, el sistema nos indica qué tipo de objeto es (enana roja, naranja, tipo Sol, planeta gigante gaseoso, helado, etc.)
+						</div>
+					</div>
+					
+					<!--CARROUSEL -->
+					<div class="slideshow-container">
+
+							<div class="mySlides fade">
+							  <div class="numbertext">1 / 12</div>
+							  <img src="images/slides/trappist1.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Trappist 1</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">2 / 12</div>
+							  <img src="images/slides/gliese436.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Gliese 436</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">3 / 12</div>
+							  <img src="images/slides/kepler62.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Kepler 62</div>
+							</div>
+							
+							<div class="mySlides fade">
+							  <div class="numbertext">4 / 12</div>
+							  <img src="images/slides/gliese581.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Gliese 581</div>
+							</div>
+							
+							<div class="mySlides fade">
+							  <div class="numbertext">5 / 12</div>
+							  <img src="images/slides/HD196050A.JPG" style="width:100%" alt="slides" />
+							  <div class="text">HD 196050 A</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">6 / 12</div>
+							  <img src="images/slides/AlphaCentauriB.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Alpha Centauri B</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">7 / 12</div>
+							  <img src="images/slides/ProximaCentauri.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Proxima Centauri</div>
+							</div>
+							
+							<div class="mySlides fade">
+							  <div class="numbertext">8 / 12</div>
+							  <img src="images/slides/55Cancri.JPG" style="width:100%" alt="slides" />
+							  <div class="text">55 Cancri</div>
+							</div>
+							
+							<div class="mySlides fade">
+							  <div class="numbertext">9 / 12</div>
+							  <img src="images/slides/Kepler22.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Kepler 22</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">10 / 12</div>
+							  <img src="images/slides/TauCeti.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Tau Ceti</div>
+							</div>
+
+							<div class="mySlides fade">
+							  <div class="numbertext">11 / 12</div>
+							  <img src="images/slides/Kepler186.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Kepler 186</div>
+							</div>
+							
+							<div class="mySlides fade">
+							  <div class="numbertext">12 / 12</div>
+							  <img src="images/slides/Sol.JPG" style="width:100%" alt="slides" />
+							  <div class="text">Sol</div>
+							</div>
+
+							<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+							<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+					</div>
+					<br/>
+
+					<div style="text-align:center">
+					  <span class="dot" onclick="currentSlide(1)"></span> 
+					  <span class="dot" onclick="currentSlide(2)"></span> 
+					  <span class="dot" onclick="currentSlide(3)"></span> 
+					  <span class="dot" onclick="currentSlide(4)"></span> 
+					   <span class="dot" onclick="currentSlide(5)"></span> 
+					  <span class="dot" onclick="currentSlide(6)"></span> 
+					  <span class="dot" onclick="currentSlide(7)"></span> 
+					  <span class="dot" onclick="currentSlide(8)"></span>
+					   <span class="dot" onclick="currentSlide(9)"></span> 
+					  <span class="dot" onclick="currentSlide(10)"></span> 
+					  <span class="dot" onclick="currentSlide(11)"></span> 
+					  <span class="dot" onclick="currentSlide(12)"></span>
+					</div>
+					<br/>					
+					
+					<script type="text/javascript" src="js/carrousel.js"></script>					
+				
+				</div>
+				
+				<div id="BasesDeDatos" class="hidden col-12" style="text-align:justify; margin-right:3%;">	
+					<div style="float:right;"><a href="docs/Taller4.5.Exoplanetas.BasesDeDatos.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> BASES DE DATOS</div>
+					<div style="float:left;">														
+						<br/>Existen varias Base de Datos online especializadas en Exoplanetas, unas más profesionales que otras: <br/><br/>						
+						<a href="http://www.openexoplanetcatalogue.com/" target="blank" class="buttonBD">1.openexoplanetcatalogue.com</a>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3;">							
+							<a href="http://www.openexoplanetcatalogue.com/" target="blank">
+								<img src="images/openexoplanetcatalogue.JPG" alt="Bases de datos" />
+								<img src="images/openexoplanetcatalogue2.JPG" style="vertical-align=top;" alt="Bases de datos" /> 
+							</a>
+						</div>
+						<br/><br/>
+						<a href="http://exoplanet.eu/" target="blank" class="buttonBD">2. exoplanet.eu</a>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3;">
+							<a href="http://exoplanet.eu/" target="blank">						
+								<img src="images/exoplanet_eu.JPG" style="vertical-align=top;" alt="Bases de datos" />
+								<img src="images/exoplanet_eu2.JPG" alt="Bases de datos" />
+							</a>
+						</div>
+						<br/><br/>
+						<a href="http://exoplanets.org/" target="blank" class="buttonBD">3. exoplanets.org</a>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3;">	
+						<a href="http://exoplanets.org/" target="blank">						
+								<img src="images/exoplanets_org.JPG" alt="Bases de datos" />
+								<img src="images/exoplanets_org2.JPG" alt="Bases de datos" />
+							</a>
+						</div>
+						<br/><br/>
+						<a href="https://exoplanetarchive.ipac.caltech.edu/" target="blank" class="buttonBD">4. exoplanetarchive (NASA) </a>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3;">														
+						<a href="https://exoplanetarchive.ipac.caltech.edu/" target="blank">
+								<img src="images/ipac.JPG" alt="Bases de datos" />
+								<img src="images/ipac2.JPG" alt="Bases de datos" />
+							</a>
+						</div>
+						<br/><br/>
+						<a href="http://www.hzgallery.org/" target="blank" class="buttonBD">5. hzgallery.org </a>
+						<div style="border-style:solid; border-with=thin;border-color:#D3D3D3;">	
+							<a href="http://www.hzgallery.org/" target="blank">
+								<img src="images/hzgallery.JPG" alt="Bases de datos" />
+								<img src="images/hzgallery2.JPG" alt="Bases de datos" />
+							</a>
+						</div>
+					 
+					</div>
+				</div>
+				
+				<div id="Misiones" class="hidden col-12" style="text-align:justify; margin-right:3%;">	
+					<div style="float:right;"><a href="docs/Taller4.5.Exoplanetas.BasesDeDatos.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> MISIONES</div>
+				
+					<div style="float:left; text-align:justify;">														
+						<br/>
+						<div style="float:left; width:35%; margin-right:5%">
+							Se propone trabajar con la plataforma <a class="link" href="https://www.thinglink.com" target="blank">thinglink</a> y diseñar una imagen interactiva con las siguientes misiones:
+							<br/>
+							<ul>
+								<li>James Web Telescope</li>
+								<li>Kepler/K2</li>
+								<li>WASP/SuperWASP</li>
+								<li>TESS</li>
+								<li>COROT</li>
+							</ul>
+							<br/>
+							Se pueden incluir los siguientes elementos:
+							<br/>
+							<ul>
+								<li>página web oficial, si tiene,</li>
+								<li>año de lanzamiento y fin, si es el caso,</li>
+								<li>entidades que participan</li>
+								<li>métodos utilizados</li>
+								<li>exoplanetas descubiertos</li>
+							</ul>
+							Como modelo, se propone el siguiente ejemplo de la Misión Kepler/K2:
+						</div>	
+												
+						<div style="float:left;">													
+							<iframe width="600" height="442" data-original-width="1033" data-original-height="575" src="https://www.thinglink.com/card/1175889898209542147" type="text/html" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen scrolling="no"></iframe>
+							<span><span>Thinglink del telescopio Kepler</span></span>
+						</div>						
+					 
+					</div>
+				</div>
+				
+				<div id="Exposicion" class="hidden col-12" style="text-align:justify; margin-right:3%;">				
+					<div style="float:right;"><a href="docs/Taller4.6.Exoplanetas.ExposicionFinal.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+					<div  style="float:left;" class="menuTitle"> EXPOSICIÓN FINAL</div>
+					<div style="float:left; text-align:justify; margin-right:5%;">														
+						<br/>
+						<div style="float:left; margin-right:2%;">	
+						<iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" width="500" height="370" src="https://prezi.com/embed/xa_oqeamdb8c/?bgcolor=ffffff&amp;lock_to_path=0&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI5a20vWTg4NkhZeVBvR2t6WHpNUkxqS2d3PT0&amp;landing_sign=FUB6UMMD2uxhvRkccNPZT-nKblFMO3lhxQSWvRqONos"></iframe>
+						<span><span>Presentación de cómo hablar en público<br/></span></span>
+						<br/>
+						<!--	<a href="https://prezi.com/xa_oqeamdb8c/como-hablar-en-publico/" target=blanck"><img src="images/hablarpublico.JPG"></a>-->
+						</div>												
+							Uno de los objetivos del taller es que los alumnos preparen por grupos una presentación oral de sus conclusiones acerca del trabajo realizado en la búsqueda del exoplaneta que han investigado a lo largo de los talleres. Deberán justificar su decisión acerca de si el exoplaneta que han estado estudiando es un buen candidato para la humanidad. Partiendo del taller anterior, donde los estudiantes prepararon una presentación de alguno de los sistemas planetarios estudiados, deberán escoger un medio auxiliar diferente del de un powerpoint y añadir la justificación  de la idoneidad o no de la migración de la humanidad al exoplaneta.
+							<br/><br/> Se proponen los siguientes productos finales:
+							<div style="text-indent: 3%;">· Presentación con <a class="link" href="https://prezi.com" target="blank"> Prezi</a>, Genially u otros entornos </div>
+							<div style="text-indent: 3%;">	· Maquetas del planeta con justificación científica de su paisaje</div>
+							<div style="text-indent: 3%;">	· Póster, infografía</div>
+							<div style="text-indent: 3%;">	· Cómic</div>
+							<div style="text-indent: 3%;">	· Vídeo </div>
+							<div style="text-indent: 3%;">	· Aplicación móvil</div>
+							<div style="text-indent: 3%;">	· Juego de rol, teatro...</div>
+							<div style="text-indent: 3%;">	· Juego trivial, de cartas...</div>
+							<div style="text-indent: 3%;">	· Composición musical como las que se muestran del sistema <a class="link" href="https://www.facebook.com/TRAPPIST1Official" target="blank">Trappist-1:</a></div><br/>
+									<br/>
+								<div >								
+									<iframe width="420" height="236" src="https://www.youtube.com/embed/FoiwTxWkMdo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									
+									<iframe style="margin-top:5%;" width="420" height="236" src="https://videopress.com/embed/NQ2XqeqD" frameborder="0" allowfullscreen></iframe>
+									<!--<script src="https://videopress.com/videopress-iframe.js"></script>-->
+								</div>
+							
+					</div>
+				</div>				
+								
+			</div>
+			
+			<div id="Universo" class="hidden col-12" style="text-align:justify; margin-right:3%;">	
+			<div style="float:right;"><a href="docs/Taller5.Universo.pdf" target="blank" class="buttonDescargar">DESCARGAR FICHA</a></div>					
+			<div  style="float:left;" class="menuTitle"> UNIVERSO</div>			
+				<div style="float:left; text-align:justify;">					
+						<table border="0">
+							<tr>
+								<td>
+									<div style="text-align:justify; font-size:16px; margin-right:5%;">																			
+										 La <a class="link" href="https://es.wikipedia.org/wiki/Paradoja_de_Olbers" target="blank">paradoja de Olbers</a>, se pregunta cómo es que el cielo es oscuro por la noche si:
+										<div style="text-align:justify; float:left;">
+											<div style="text-align:justify; margin-left:5%">
+												<br/><span style="font-weight:900;">·</span>&nbsp;&nbsp; el Universo es infinito y<br/>											
+												<span style="font-weight:900;">·</span>&nbsp;&nbsp;las estrellas están uniformemente distribuidas por todo el Universo.<br/>
+											</div>
+											<br/>
+											Si las premisas son ciertas, el cielo debería ser blanco, no oscuro, porque siempre deberíamos ver estrellas brillando. Aunque la luminosidad disminuye con el cuadrado de la distancia recorrida y, por lo tanto, la intensidad percibida desde la Tierra es menor, el cielo no debería ser negro por la noche, porque las diferentes capas infinitas de estrellas se superponen.<br/><br/>
+											La explicación más aceptada de la paradoja se resuelve con dos argumentos:
+											<div style="text-align:justify; margin-left:5%">
+												<br/>1. El Universo no es infinito, existe desde el Big Bang, hace 13.800 millones de años. Este hecho provoca que la luz de las estrellas más distantes aún no nos haya llegado.<br/>											
+												2. El Universo se está expandiendo, de manera que la luz de las estrellas más lejanas llega “con menos energía”, y por lo tanto menos brillante.<br/>
+											</div>
+										</div>
+									</div>	
+								</td>
+								<td>
+									<div style="width: 400px; height: 200px;">
+									
+									<video width="70%" controls style="float: left;">
+										<source src="video/ParadojaOlbers.mp4" type="video/mp4">																								
+										Tu navegador no soporta la visualización de este video
+									</video>									
+									</div>
+								</td>
+							</tr>	
+							</table>	
+							<br/><br/>							
+							<div style="float:left; text-align:justify; margin-right: 3%;">
+								<div style="float:left; margin-right: 1%;">	
+									<img src="images/BigBang.jpg" alt="Big Bang" />
+									<span><span>Historia del Universo</span></span>									
+								</div>
+								<div style="text-align:justify; margin-right: 3%;">
+									<br/>
+									El conocimiento que tenemos del Universo primordial (de 0 a 2.5 x 10-5 segundos) está basado en conjeturas. Se cree que inicialmente había 10 dimensiones que colapsaron en 4. Al inicio, las 4 fuerzas fundamentales de la naturaleza (gravitación, fuerza nuclear fuerte, electromagnética e interacción nuclear débil) estaban unidas en una sola y se fueron separando. El Universo se expande de manera acelerada en un fenómeno llamado inflación, hecho que provocó el enfriamiento progresivo del Universo.									
+									<br/><br/>
+									En el Universo temprano se suceden diferentes épocas (hadrónica, leptónica, fotónica), que se caracterizan porque el Universo estaba compuesto de distintas combinaciones de partículas elementales: hadrones, leptones, fotones, protones, neutrones, electrones...
+									Se produce la  recombinación y el desacoplamiento: después de unos 400.000 años del Big Bang, el plasma se enfrió lo suficiente (3500 K) para permitir que los electrones y los protones formaran los primeros átomos de Hidrógeno. Los fotones fueron capaces de disociarse y viajaron libremente por el espacio por primera vez. “Se hizo la luz”. Aún se puede “oír” su ruido en la llamada radiación de fondo de microondas. Uno de cada diez puntos de la “nieve” de un televisor analógico proviene del fondo de microondas.
+									<br/><img src="images/microondas.jpg" alt="Radiación de fondo de microondas" />
+									<span><span>Radiación de fondo de microondas</span></span>
+									<br/><br/><br/>
+									Más adelante se empezaron a formar estructuras: de manera jerárquica, se fueron formando estrellas, galaxias, cúmulos:
+por colapso gravitacional, se formaron los primeros quásares y galaxias activas y aparecieron las primeras estrellas de población III, que son las más viejas del Universo, a partir de Hidrógeno, Helio y Litio.
+La materia se fue  colapsando para formar galaxias. Nacen las estrellas de población II, que son “hijas” de las de población III. Más tarde aparecen las estrellas de población I, las más jóvenes, como nuestro Sol.
+Las galaxias se atraen para formar grupos, cúmulos, supercúmulos.<br/><br/>
+Hubble dedujo que el universo se está expandiendo y determinó la <a class="link" href="https://es.wikipedia.org/wiki/Ley_de_Hubble" target="blank">ley de Hubble</a>, que establece que el desplazamiento al rojo de una galaxia, y por lo tanto su velocidad de alejamiento, es proporcional a la distancia a la que se encuentra, es decir que cuanto más lejos se encuentra una galaxia, más rápido se aleja de nosotros. Hoy en día, la expansión acelerada continúa. 
+								</div>	
+							</div>	
+
+						<br/>	
+				</div>
+            	
+            </div>
+
+</div>
+
+</body>
+</html>
