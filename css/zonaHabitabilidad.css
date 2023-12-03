@@ -1,0 +1,168 @@
+.col{
+    float:left;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+}
+
+#col1{    
+	width:7%;	
+    height:100%;
+	text-align:left;
+    padding: 2px 6px;
+    font-size:13px;
+	z-index:5;
+   // border:1px solid black;
+}
+
+#remove-drag{	
+	
+	position:absolute;
+	top:425px;
+	right:100px;;
+    width:25%;
+    height:50%;	
+    border:1px solid black;
+}
+
+#droppable{
+    width:90%;
+	 //height:150%;
+    height:700px;
+    border:1px solid black;
+    }
+	
+	.circleBase {
+		border-radius: 50%;						 
+		width: 20px;
+		height: 20px;				
+	}
+
+	.planetaRocoso {
+		background-image:url("../images/mercury.png");		
+		background-size: cover;
+		background-repeat: no-repeat;		
+		cursor: -webkit-grab; cursor: grab;
+	}	
+		
+	.planetaTierra {
+	    background-image:url("../images/earth.png");
+		width: 25px;
+		height: 25px;
+		background-size: cover;
+		background-repeat: no-repeat;	
+		cursor: -webkit-grab; cursor: grab;		
+	}
+	
+	.planetaAnillos {
+	    background-image:url("../images/saturn.png");
+		width: 70px;
+		height: 70px;
+		border-radius:  87% 15%;
+		background-size: cover;
+		background-repeat: no-repeat;	
+		cursor: -webkit-grab; cursor: grab;		
+	}
+	
+	.planetaHelado {
+	    background-image:url("../images/neptuno.png");
+		width: 65px;
+		height: 65px;
+		background-size: cover;
+		background-repeat: no-repeat;			
+		cursor: -webkit-grab; cursor: grab;
+	}
+	
+	.planetaGaseoso {
+	    background-image:url("../images/jupiter.png");
+		width: 100px;
+		height: 100px;
+		background-size: cover;
+		background-repeat: no-repeat;		
+		cursor: -webkit-grab; cursor: grab;		
+	}
+		
+	.zh{
+		z-index: 0;		
+		top:45%;
+		position:fixed;
+		width:52px;
+		height:52px;
+		border-radius:50%;    
+		left: 557px;	
+		padding: 10px;  
+		border: 1px blur;				
+		box-shadow: 
+			0px 0px 0px 60px hsl(0, 0%, 100%),
+			0px 0px 0px 150px hsl(152, 32%, 87%);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image:url("../images/orangeStar.png");		
+		}  
+					
+.tooltip {
+  position: relative; 
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  height:20px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;  
+  top: 110%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+.remove-drag-hover{background-color:#ED4949!important;}
+
+#remove-drag {
+	position:fixed;	
+	float:right;
+	margin-left:61%;
+	display: flex;
+	width: 7%;
+	height: 9%;
+	background-color: #FF8B8B;
+}
+
+#tip {
+	color: #fff;
+	font-size: 15px;
+	text-align: center;
+	 margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);	
+	//padding-top: 6px;
+}     
+
+#axe {
+  position: fixed; 
+  bottom: 0px;
+  width: 90%;
+}
+         
